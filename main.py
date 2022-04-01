@@ -1,9 +1,10 @@
 import numpy as np
+import math
 
 #TODO: should probably make a main function and put all other code in functions instead of haveing one long script
 
-#takes input form file
-#TODO: should probably make it so user can input a file name (in command line when running python file)
+#takes input from file
+#TODO: should probably make it so user can input a file path/name (in command line when running python file)
 lines = []
 
 with open('text.txt') as f:
@@ -39,12 +40,15 @@ for word in words:
 #creates bigrams
 bigram_count = dict()
 
-#Creates sub dictionary that goes into larger dictionary
+#Creates nested dictionary
+total_bigrams = 0
 for word in unique_words:
     sub_bigram = dict.fromkeys(unique_words,0)
     bigram_count[word] = sub_bigram
+    total_bigrams += 1
+total_bigrams *= len(unique_words)
 
-#puts subdictionary into the larger dictionary
+#finds counts of bigrams
 for index, word in enumerate(words):
     #This condition guarantees that we do not overcount the bigram of {<s>,</s>}, or whatever the start and end characters are in the document.
     if index < len(words) and index != 0:
@@ -62,15 +66,15 @@ for word in unique_words:
 #Dictionary of bigram probabilities
 p_bigrams = dict()
 
-#Creates sub dictionary that goes into larger dictionary
+#Creates nested dictionary
 for word in unique_words:
     sub_bigram = dict.fromkeys(unique_words,0)
     p_bigrams[word] = sub_bigram
 
-#puts subdictionary into the larger dictionary
+#updates disctionary with MLE probailities
 for index, word in enumerate(words):
     if index < len(words) and index != 0:
-        p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index -1]][words[index]] / unigram_counts[words[index-1]]
+        p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index - 1]][words[index]] / unigram_counts[words[index - 1]]
 
 # print("bigram probabilities: ", p_bigrams["green"])
 
@@ -87,3 +91,34 @@ sentence += " </s>"
 print(sentence)
 
 # add one
+add_one_prob = dict()
+
+#Creates sub dictionary that goes into larger dictionary
+for word in unique_words:
+    sub_bigram = dict.fromkeys(unique_words,0)
+    add_one_prob[word] = sub_bigram
+
+#puts subdictionary into the larger dictionary
+# for index, word in enumerate(words):
+#     if index < len(words) and index != 0:
+#         add_one_prob[words[index - 1]][words[index]] = (bigram_count[words[index -1]][words[index]] + 1) / (unigram_counts[words[index-1]] + len(unique_words))
+        # print((bigram_count[words[index -1]][words[index]] + 1) / (unigram_counts[words[index-1]] + len(unique_words)))
+
+#puts subdictionary into the larger dictionary
+for word in unique_words:
+    for word2 in unique_words:
+        # print("word: "+word+" word2: "+word2)
+        add_one_prob[word][word2] =  (bigram_count[word][word2] + 1) / (unigram_counts[word] + len(unique_words))
+
+# print("add_one_prob: ", add_one_prob["I"])
+
+#perplexity calculation
+sumLogMLE = 0
+powerAndBase = 10
+for word in unique_words:
+    for word2 in unique_words:
+        if(p_bigrams[word][word2]!=0):
+            sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
+print("sumLogMLE: " + str(sumLogMLE))
+result = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
+print("result: " + str(result))

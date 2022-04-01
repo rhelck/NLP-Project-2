@@ -1,0 +1,625 @@
+<s> It is an ancient Mariner, </s>
+<s> And he stoppeth one of three. </s>
+<s> "By thy long grey beard and glittering eye, </s>
+<s> Now wherefore stopp'st thou me? </s>
+<s> "The Bridegroom's doors are opened wide, </s>
+<s> And I am next of kin; </s>
+<s> The guests are met, the feast is set: </s>
+<s> May'st hear the merry din." </s>
+<s> He holds him with his skinny hand, </s>
+<s> "There was a ship," quoth he. </s>
+<s> "Hold off! unhand me, grey-beard loon!" </s>
+<s> Eftsoons his hand dropt he. </s>
+<s> He holds him with his glittering eye-- </s>
+<s> The Wedding-Guest stood still, </s>
+<s> And listens like a three years child: </s>
+<s> The Mariner hath his will. </s>
+<s> The Wedding-Guest sat on a stone: </s>
+<s> He cannot chuse but hear; </s>
+<s> And thus spake on that ancient man, </s>
+<s> The bright-eyed Mariner. </s>
+<s> The ship was cheered, the harbour cleared, </s>
+<s> Merrily did we drop </s>
+<s> Below the kirk, below the hill, </s>
+<s> Below the light-house top. </s>
+<s> The Sun came up upon the left, </s>
+<s> Out of the sea came he! </s>
+<s> And he shone bright, and on the right </s>
+<s> Went down into the sea. </s>
+<s> Higher and higher every day, </s>
+<s> Till over the mast at noon-- </s>
+<s> The Wedding-Guest here beat his breast, </s>
+<s> For he heard the loud bassoon. </s>
+<s> The bride hath paced into the hall, </s>
+<s> Red as a rose is she; </s>
+<s> Nodding their heads before her goes </s>
+<s> The merry minstrelsy. </s>
+<s> The Wedding-Guest he beat his breast, </s>
+<s> Yet he cannot chuse but hear; </s>
+<s> And thus spake on that ancient man, </s>
+<s> The bright-eyed Mariner. </s>
+<s> And now the STORM-BLAST came, and he </s>
+<s> Was tyrannous and strong: </s>
+<s> He struck with his o'ertaking wings, </s>
+<s> And chased south along. </s>
+<s> With sloping masts and dipping prow, </s>
+<s> As who pursued with yell and blow </s>
+<s> Still treads the shadow of his foe </s>
+<s> And forward bends his head, </s>
+<s> The ship drove fast, loud roared the blast, </s>
+<s> And southward aye we fled. </s>
+<s> And now there came both mist and snow, </s>
+<s> And it grew wondrous cold: </s>
+<s> And ice, mast-high, came floating by, </s>
+<s> As green as emerald. </s>
+<s> And through the drifts the snowy clifts </s>
+<s> Did send a dismal sheen: </s>
+<s> Nor shapes of men nor beasts we ken-- </s>
+<s> The ice was all between. </s>
+<s> The ice was here, the ice was there, </s>
+<s> The ice was all around: </s>
+<s> It cracked and growled, and roared and howled, </s>
+<s> Like noises in a swound! </s>
+<s> At length did cross an Albatross: </s>
+<s> Thorough the fog it came; </s>
+<s> As if it had been a Christian soul, </s>
+<s> We hailed it in God's name. </s>
+<s> It ate the food it ne'er had eat, </s>
+<s> And round and round it flew. </s>
+<s> The ice did split with a thunder-fit; </s>
+<s> The helmsman steered us through! </s>
+<s> And a good south wind sprung up behind; </s>
+<s> The Albatross did follow, </s>
+<s> And every day, for food or play, </s>
+<s> Came to the mariners' hollo! </s>
+<s> In mist or cloud, on mast or shroud, </s>
+<s> It perched for vespers nine; </s>
+<s> Whiles all the night, through fog-smoke white, </s>
+<s> Glimmered the white Moon-shine. </s>
+<s> "God save thee, ancient Mariner! </s>
+<s> From the fiends, that plague thee thus!-- </s>
+<s> Why look'st thou so?"--With my cross-bow </s>
+<s> I shot the ALBATROSS. </s>
+<s> The Sun now rose upon the right: </s>
+<s> Out of the sea came he, </s>
+<s> Still hid in mist, and on the left </s>
+<s> Went down into the sea. </s>
+<s> And the good south wind still blew behind </s>
+<s> But no sweet bird did follow, </s>
+<s> Nor any day for food or play </s>
+<s> Came to the mariners' hollo! </s>
+<s> And I had done an hellish thing, </s>
+<s> And it would work 'em woe: </s>
+<s> For all averred, I had killed the bird </s>
+<s> That made the breeze to blow. </s>
+<s> Ah wretch! said they, the bird to slay </s>
+<s> That made the breeze to blow! </s>
+<s> Nor dim nor red, like God's own head, </s>
+<s> The glorious Sun uprist: </s>
+<s> Then all averred, I had killed the bird </s>
+<s> That brought the fog and mist. </s>
+<s> 'Twas right, said they, such birds to slay, </s>
+<s> That bring the fog and mist. </s>
+<s> The fair breeze blew, the white foam flew, </s>
+<s> The furrow followed free: </s>
+<s> We were the first that ever burst </s>
+<s> Into that silent sea. </s>
+<s> Down dropt the breeze, the sails dropt down, </s>
+<s> 'Twas sad as sad could be; </s>
+<s> And we did speak only to break </s>
+<s> The silence of the sea! </s>
+<s> All in a hot and copper sky, </s>
+<s> The bloody Sun, at noon, </s>
+<s> Right up above the mast did stand, </s>
+<s> No bigger than the Moon. </s>
+<s> Day after day, day after day, </s>
+<s> We stuck, nor breath nor motion; </s>
+<s> As idle as a painted ship </s>
+<s> Upon a painted ocean. </s>
+<s> Water, water, every where, </s>
+<s> And all the boards did shrink; </s>
+<s> Water, water, every where, </s>
+<s> Nor any drop to drink. </s>
+<s> The very deep did rot: O Christ! </s>
+<s> That ever this should be! </s>
+<s> Yea, slimy things did crawl with legs </s>
+<s> Upon the slimy sea. </s>
+<s> About, about, in reel and rout </s>
+<s> The death-fires danced at night; </s>
+<s> The water, like a witch's oils, </s>
+<s> Burnt green, and blue and white. </s>
+<s> And some in dreams assured were </s>
+<s> Of the spirit that plagued us so: </s>
+<s> Nine fathom deep he had followed us </s>
+<s> From the land of mist and snow. </s>
+<s> And every tongue, through utter drought, </s>
+<s> Was withered at the root; </s>
+<s> We could not speak, no more than if </s>
+<s> We had been choked with soot. </s>
+<s> Ah! well a-day! what evil looks </s>
+<s> Had I from old and young! </s>
+<s> Instead of the cross, the Albatross </s>
+<s> About my neck was hung. </s>
+<s> There passed a weary time.  Each throat </s>
+<s> Was parched, and glazed each eye. </s>
+<s> A weary time! a weary time! </s>
+<s> How glazed each weary eye, </s>
+<s> When looking westward, I beheld </s>
+<s> A something in the sky. </s>
+<s> At first it seemed a little speck, </s>
+<s> And then it seemed a mist: </s>
+<s> It moved and moved, and took at last </s>
+<s> A certain shape, I wist. </s>
+<s> A speck, a mist, a shape, I wist! </s>
+<s> And still it neared and neared: </s>
+<s> As if it dodged a water-sprite, </s>
+<s> It plunged and tacked and veered. </s>
+<s> With throats unslaked, with black lips baked, </s>
+<s> We could not laugh nor wail; </s>
+<s> Through utter drought all dumb we stood! </s>
+<s> I bit my arm, I sucked the blood, </s>
+<s> And cried, A sail! a sail! </s>
+<s> With throats unslaked, with black lips baked, </s>
+<s> Agape they heard me call: </s>
+<s> Gramercy! they for joy did grin, </s>
+<s> And all at once their breath drew in, </s>
+<s> As they were drinking all. </s>
+<s> See! see! (I cried) she tacks no more! </s>
+<s> Hither to work us weal; </s>
+<s> Without a breeze, without a tide, </s>
+<s> She steadies with upright keel! </s>
+<s> The western wave was all a-flame </s>
+<s> The day was well nigh done! </s>
+<s> Almost upon the western wave </s>
+<s> Rested the broad bright Sun; </s>
+<s> When that strange shape drove suddenly </s>
+<s> Betwixt us and the Sun. </s>
+<s> And straight the Sun was flecked with bars, </s>
+<s> (Heaven's Mother send us grace!) </s>
+<s> As if through a dungeon-grate he peered, </s>
+<s> With broad and burning face. </s>
+<s> Alas! (thought I, and my heart beat loud) </s>
+<s> How fast she nears and nears! </s>
+<s> Are those her sails that glance in the Sun, </s>
+<s> Like restless gossameres! </s>
+<s> Are those her ribs through which the Sun </s>
+<s> Did peer, as through a grate? </s>
+<s> And is that Woman all her crew? </s>
+<s> Is that a DEATH? and are there two? </s>
+<s> Is DEATH that woman's mate? </s>
+<s> Her lips were red, her looks were free, </s>
+<s> Her locks were yellow as gold: </s>
+<s> Her skin was as white as leprosy, </s>
+<s> The Night-Mare LIFE-IN-DEATH was she, </s>
+<s> Who thicks man's blood with cold. </s>
+<s> The naked hulk alongside came, </s>
+<s> And the twain were casting dice; </s>
+<s> "The game is done!  I've won!  I've won!" </s>
+<s> Quoth she, and whistles thrice. </s>
+<s> The Sun's rim dips; the stars rush out: </s>
+<s> At one stride comes the dark; </s>
+<s> With far-heard whisper, o'er the sea. </s>
+<s> Off shot the spectre-bark. </s>
+<s> We listened and looked sideways up! </s>
+<s> Fear at my heart, as at a cup, </s>
+<s> My life-blood seemed to sip! </s>
+<s> The stars were dim, and thick the night, </s>
+<s> The steersman's face by his lamp gleamed white; </s>
+<s> From the sails the dew did drip-- </s>
+<s> Till clombe above the eastern bar </s>
+<s> The horned Moon, with one bright star </s>
+<s> Within the nether tip. </s>
+<s> One after one, by the star-dogged Moon </s>
+<s> Too quick for groan or sigh, </s>
+<s> Each turned his face with a ghastly pang, </s>
+<s> And cursed me with his eye. </s>
+<s> Four times fifty living men, </s>
+<s> (And I heard nor sigh nor groan) </s>
+<s> With heavy thump, a lifeless lump, </s>
+<s> They dropped down one by one. </s>
+<s> The souls did from their bodies fly,-- </s>
+<s> They fled to bliss or woe! </s>
+<s> And every soul, it passed me by, </s>
+<s> Like the whizz of my CROSS-BOW! </s>
+<s> "I fear thee, ancient Mariner! </s>
+<s> I fear thy skinny hand! </s>
+<s> And thou art long, and lank, and brown, </s>
+<s> As is the ribbed sea-sand. </s>
+<s> "I fear thee and thy glittering eye, </s>
+<s> And thy skinny hand, so brown."-- </s>
+<s> Fear not, fear not, thou Wedding-Guest! </s>
+<s> This body dropt not down. </s>
+<s> Alone, alone, all, all alone, </s>
+<s> Alone on a wide wide sea! </s>
+<s> And never a saint took pity on </s>
+<s> My soul in agony. </s>
+<s> The many men, so beautiful! </s>
+<s> And they all dead did lie: </s>
+<s> And a thousand thousand slimy things </s>
+<s> Lived on; and so did I. </s>
+<s> I looked upon the rotting sea, </s>
+<s> And drew my eyes away; </s>
+<s> I looked upon the rotting deck, </s>
+<s> And there the dead men lay. </s>
+<s> I looked to Heaven, and tried to pray: </s>
+<s> But or ever a prayer had gusht, </s>
+<s> A wicked whisper came, and made </s>
+<s> my heart as dry as dust. </s>
+<s> I closed my lids, and kept them close, </s>
+<s> And the balls like pulses beat; </s>
+<s> For the sky and the sea, and the sea and the sky </s>
+<s> Lay like a load on my weary eye, </s>
+<s> And the dead were at my feet. </s>
+<s> The cold sweat melted from their limbs, </s>
+<s> Nor rot nor reek did they: </s>
+<s> The look with which they looked on me </s>
+<s> Had never passed away. </s>
+<s> An orphan's curse would drag to Hell </s>
+<s> A spirit from on high; </s>
+<s> But oh! more horrible than that </s>
+<s> Is a curse in a dead man's eye! </s>
+<s> Seven days, seven nights, I saw that curse, </s>
+<s> And yet I could not die. </s>
+<s> The moving Moon went up the sky, </s>
+<s> And no where did abide: </s>
+<s> Softly she was going up, </s>
+<s> And a star or two beside. </s>
+<s> Her beams bemocked the sultry main, </s>
+<s> Like April hoar-frost spread; </s>
+<s> But where the ship's huge shadow lay, </s>
+<s> The charmed water burnt alway </s>
+<s> A still and awful red. </s>
+<s> Beyond the shadow of the ship, </s>
+<s> I watched the water-snakes: </s>
+<s> They moved in tracks of shining white, </s>
+<s> And when they reared, the elfish light </s>
+<s> Fell off in hoary flakes. </s>
+<s> Within the shadow of the ship </s>
+<s> I watched their rich attire: </s>
+<s> Blue, glossy green, and velvet black, </s>
+<s> They coiled and swam; and every track </s>
+<s> Was a flash of golden fire. </s>
+<s> O happy living things! no tongue </s>
+<s> Their beauty might declare: </s>
+<s> A spring of love gushed from my heart, </s>
+<s> And I blessed them unaware: </s>
+<s> Sure my kind saint took pity on me, </s>
+<s> And I blessed them unaware. </s>
+<s> The self same moment I could pray; </s>
+<s> And from my neck so free </s>
+<s> The Albatross fell off, and sank </s>
+<s> Like lead into the sea. </s>
+<s> Oh sleep! it is a gentle thing, </s>
+<s> Beloved from pole to pole! </s>
+<s> To Mary Queen the praise be given! </s>
+<s> She sent the gentle sleep from Heaven, </s>
+<s> That slid into my soul. </s>
+<s> The silly buckets on the deck, </s>
+<s> That had so long remained, </s>
+<s> I dreamt that they were filled with dew; </s>
+<s> And when I awoke, it rained. </s>
+<s> My lips were wet, my throat was cold, </s>
+<s> My garments all were dank; </s>
+<s> Sure I had drunken in my dreams, </s>
+<s> And still my body drank. </s>
+<s> I moved, and could not feel my limbs: </s>
+<s> I was so light--almost </s>
+<s> I thought that I had died in sleep, </s>
+<s> And was a blessed ghost. </s>
+<s> And soon I heard a roaring wind: </s>
+<s> It did not come anear; </s>
+<s> But with its sound it shook the sails, </s>
+<s> That were so thin and sere. </s>
+<s> The upper air burst into life! </s>
+<s> And a hundred fire-flags sheen, </s>
+<s> To and fro they were hurried about! </s>
+<s> And to and fro, and in and out, </s>
+<s> The wan stars danced between. </s>
+<s> And the coming wind did roar more loud, </s>
+<s> And the sails did sigh like sedge; </s>
+<s> And the rain poured down from one black cloud; </s>
+<s> The Moon was at its edge. </s>
+<s> The thick black cloud was cleft, and still </s>
+<s> The Moon was at its side: </s>
+<s> Like waters shot from some high crag, </s>
+<s> The lightning fell with never a jag, </s>
+<s> A river steep and wide. </s>
+<s> The loud wind never reached the ship, </s>
+<s> Yet now the ship moved on! </s>
+<s> Beneath the lightning and the Moon </s>
+<s> The dead men gave a groan. </s>
+<s> They groaned, they stirred, they all uprose, </s>
+<s> Nor spake, nor moved their eyes; </s>
+<s> It had been strange, even in a dream, </s>
+<s> To have seen those dead men rise. </s>
+<s> The helmsman steered, the ship moved on; </s>
+<s> Yet never a breeze up blew; </s>
+<s> The mariners all 'gan work the ropes, </s>
+<s> Where they were wont to do: </s>
+<s> They raised their limbs like lifeless tools-- </s>
+<s> We were a ghastly crew. </s>
+<s> The body of my brother's son, </s>
+<s> Stood by me, knee to knee: </s>
+<s> The body and I pulled at one rope, </s>
+<s> But he said nought to me. </s>
+<s> "I fear thee, ancient Mariner!" </s>
+<s> Be calm, thou Wedding-Guest! </s>
+<s> 'Twas not those souls that fled in pain, </s>
+<s> Which to their corses came again, </s>
+<s> But a troop of spirits blest: </s>
+<s> For when it dawned--they dropped their arms, </s>
+<s> And clustered round the mast; </s>
+<s> Sweet sounds rose slowly through their mouths, </s>
+<s> And from their bodies passed. </s>
+<s> Around, around, flew each sweet sound, </s>
+<s> Then darted to the Sun; </s>
+<s> Slowly the sounds came back again, </s>
+<s> Now mixed, now one by one. </s>
+<s> Sometimes a-dropping from the sky </s>
+<s> I heard the sky-lark sing; </s>
+<s> Sometimes all little birds that are, </s>
+<s> How they seemed to fill the sea and air </s>
+<s> With their sweet jargoning! </s>
+<s> And now 'twas like all instruments, </s>
+<s> Now like a lonely flute; </s>
+<s> And now it is an angel's song, </s>
+<s> That makes the Heavens be mute. </s>
+<s> It ceased; yet still the sails made on </s>
+<s> A pleasant noise till noon, </s>
+<s> A noise like of a hidden brook </s>
+<s> In the leafy month of June, </s>
+<s> That to the sleeping woods all night </s>
+<s> Singeth a quiet tune. </s>
+<s> Till noon we quietly sailed on, </s>
+<s> Yet never a breeze did breathe: </s>
+<s> Slowly and smoothly went the ship, </s>
+<s> Moved onward from beneath. </s>
+<s> Under the keel nine fathom deep, </s>
+<s> From the land of mist and snow, </s>
+<s> The spirit slid: and it was he </s>
+<s> That made the ship to go. </s>
+<s> The sails at noon left off their tune, </s>
+<s> And the ship stood still also. </s>
+<s> The Sun, right up above the mast, </s>
+<s> Had fixed her to the ocean: </s>
+<s> But in a minute she 'gan stir, </s>
+<s> With a short uneasy motion-- </s>
+<s> Backwards and forwards half her length </s>
+<s> With a short uneasy motion. </s>
+<s> Then like a pawing horse let go, </s>
+<s> She made a sudden bound: </s>
+<s> It flung the blood into my head, </s>
+<s> And I fell down in a swound. </s>
+<s> How long in that same fit I lay, </s>
+<s> I have not to declare; </s>
+<s> But ere my living life returned, </s>
+<s> I heard and in my soul discerned </s>
+<s> Two VOICES in the air. </s>
+<s> "Is it he?" quoth one, "Is this the man? </s>
+<s> By him who died on cross, </s>
+<s> With his cruel bow he laid full low, </s>
+<s> The harmless Albatross. </s>
+<s> "The spirit who bideth by himself </s>
+<s> In the land of mist and snow, </s>
+<s> He loved the bird that loved the man </s>
+<s> Who shot him with his bow." </s>
+<s> The other was a softer voice, </s>
+<s> As soft as honey-dew: </s>
+<s> Quoth he, "The man hath penance done, </s>
+<s> And penance more will do." </s>
+<s> But tell me, tell me! speak again, </s>
+<s> Thy soft response renewing-- </s>
+<s> What makes that ship drive on so fast? </s>
+<s> What is the OCEAN doing? </s>
+<s> Still as a slave before his lord, </s>
+<s> The OCEAN hath no blast; </s>
+<s> His great bright eye most silently </s>
+<s> Up to the Moon is cast-- </s>
+<s> If he may know which way to go; </s>
+<s> For she guides him smooth or grim </s>
+<s> See, brother, see! how graciously </s>
+<s> She looketh down on him. </s>
+<s> But why drives on that ship so fast, </s>
+<s> Without or wave or wind? </s>
+<s> The air is cut away before, </s>
+<s> And closes from behind. </s>
+<s> Fly, brother, fly! more high, more high </s>
+<s> Or we shall be belated: </s>
+<s> For slow and slow that ship will go, </s>
+<s> When the Mariner's trance is abated. </s>
+<s> I woke, and we were sailing on </s>
+<s> As in a gentle weather: </s>
+<s> 'Twas night, calm night, the Moon was high; </s>
+<s> The dead men stood together. </s>
+<s> All stood together on the deck, </s>
+<s> For a charnel-dungeon fitter: </s>
+<s> All fixed on me their stony eyes, </s>
+<s> That in the Moon did glitter. </s>
+<s> The pang, the curse, with which they died, </s>
+<s> Had never passed away: </s>
+<s> I could not draw my eyes from theirs, </s>
+<s> Nor turn them up to pray. </s>
+<s> And now this spell was snapt: once more </s>
+<s> I viewed the ocean green. </s>
+<s> And looked far forth, yet little saw </s>
+<s> Of what had else been seen-- </s>
+<s> Like one that on a lonesome road </s>
+<s> Doth walk in fear and dread, </s>
+<s> And having once turned round walks on, </s>
+<s> And turns no more his head; </s>
+<s> Because he knows, a frightful fiend </s>
+<s> Doth close behind him tread. </s>
+<s> But soon there breathed a wind on me, </s>
+<s> Nor sound nor motion made: </s>
+<s> Its path was not upon the sea, </s>
+<s> In ripple or in shade. </s>
+<s> It raised my hair, it fanned my cheek </s>
+<s> Like a meadow-gale of spring-- </s>
+<s> It mingled strangely with my fears, </s>
+<s> Yet it felt like a welcoming. </s>
+<s> Swiftly, swiftly flew the ship, </s>
+<s> Yet she sailed softly too: </s>
+<s> Sweetly, sweetly blew the breeze-- </s>
+<s> On me alone it blew. </s>
+<s> Oh! dream of joy! is this indeed </s>
+<s> The light-house top I see? </s>
+<s> Is this the hill? is this the kirk? </s>
+<s> Is this mine own countree! </s>
+<s> We drifted o'er the harbour-bar, </s>
+<s> And I with sobs did pray-- </s>
+<s> O let me be awake, my God! </s>
+<s> Or let me sleep alway. </s>
+<s> The harbour-bay was clear as glass, </s>
+<s> So smoothly it was strewn! </s>
+<s> And on the bay the moonlight lay, </s>
+<s> And the shadow of the moon. </s>
+<s> The rock shone bright, the kirk no less, </s>
+<s> That stands above the rock: </s>
+<s> The moonlight steeped in silentness </s>
+<s> The steady weathercock. </s>
+<s> And the bay was white with silent light, </s>
+<s> Till rising from the same, </s>
+<s> Full many shapes, that shadows were, </s>
+<s> In crimson colours came. </s>
+<s> A little distance from the prow </s>
+<s> Those crimson shadows were: </s>
+<s> I turned my eyes upon the deck-- </s>
+<s> Oh, Christ! what saw I there! </s>
+<s> Each corse lay flat, lifeless and flat, </s>
+<s> And, by the holy rood! </s>
+<s> A man all light, a seraph-man, </s>
+<s> On every corse there stood. </s>
+<s> This seraph band, each waved his hand: </s>
+<s> It was a heavenly sight! </s>
+<s> They stood as signals to the land, </s>
+<s> Each one a lovely light: </s>
+<s> This seraph-band, each waved his hand, </s>
+<s> No voice did they impart-- </s>
+<s> No voice; but oh! the silence sank </s>
+<s> Like music on my heart. </s>
+<s> But soon I heard the dash of oars; </s>
+<s> I heard the Pilot's cheer; </s>
+<s> My head was turned perforce away, </s>
+<s> And I saw a boat appear. </s>
+<s> The Pilot, and the Pilot's boy, </s>
+<s> I heard them coming fast: </s>
+<s> Dear Lord in Heaven! it was a joy </s>
+<s> The dead men could not blast. </s>
+<s> I saw a third--I heard his voice: </s>
+<s> It is the Hermit good! </s>
+<s> He singeth loud his godly hymns </s>
+<s> That he makes in the wood. </s>
+<s> He'll shrieve my soul, he'll wash away </s>
+<s> The Albatross's blood. </s>
+<s> This Hermit good lives in that wood </s>
+<s> Which slopes down to the sea. </s>
+<s> How loudly his sweet voice he rears! </s>
+<s> He loves to talk with marineres </s>
+<s> That come from a far countree. </s>
+<s> He kneels at morn and noon and eve-- </s>
+<s> He hath a cushion plump: </s>
+<s> It is the moss that wholly hides </s>
+<s> The rotted old oak-stump. </s>
+<s> The skiff-boat neared: I heard them talk, </s>
+<s> "Why this is strange, I trow! </s>
+<s> Where are those lights so many and fair, </s>
+<s> That signal made but now?" </s>
+<s> "Strange, by my faith!" the Hermit said-- </s>
+<s> "And they answered not our cheer! </s>
+<s> The planks looked warped! and see those sails, </s>
+<s> How thin they are and sere! </s>
+<s> I never saw aught like to them, </s>
+<s> Unless perchance it were </s>
+<s> "Brown skeletons of leaves that lag </s>
+<s> My forest-brook along; </s>
+<s> When the ivy-tod is heavy with snow, </s>
+<s> And the owlet whoops to the wolf below, </s>
+<s> That eats the she-wolf's young." </s>
+<s> "Dear Lord! it hath a fiendish look-- </s>
+<s> (The Pilot made reply) </s>
+<s> I am a-feared"--"Push on, push on!" </s>
+<s> Said the Hermit cheerily. </s>
+<s> The boat came closer to the ship, </s>
+<s> But I nor spake nor stirred; </s>
+<s> The boat came close beneath the ship, </s>
+<s> And straight a sound was heard. </s>
+<s> Under the water it rumbled on, </s>
+<s> Still louder and more dread: </s>
+<s> It reached the ship, it split the bay; </s>
+<s> The ship went down like lead. </s>
+<s> Stunned by that loud and dreadful sound, </s>
+<s> Which sky and ocean smote, </s>
+<s> Like one that hath been seven days drowned </s>
+<s> My body lay afloat; </s>
+<s> But swift as dreams, myself I found </s>
+<s> Within the Pilot's boat. </s>
+<s> Upon the whirl, where sank the ship, </s>
+<s> The boat spun round and round; </s>
+<s> And all was still, save that the hill </s>
+<s> Was telling of the sound. </s>
+<s> I moved my lips--the Pilot shrieked </s>
+<s> And fell down in a fit; </s>
+<s> The holy Hermit raised his eyes, </s>
+<s> And prayed where he did sit. </s>
+<s> I took the oars: the Pilot's boy, </s>
+<s> Who now doth crazy go, </s>
+<s> Laughed loud and long, and all the while </s>
+<s> His eyes went to and fro. </s>
+<s> "Ha! ha!" quoth he, "full plain I see, </s>
+<s> The Devil knows how to row." </s>
+<s> And now, all in my own countree, </s>
+<s> I stood on the firm land! </s>
+<s> The Hermit stepped forth from the boat, </s>
+<s> And scarcely he could stand. </s>
+<s> "O shrieve me, shrieve me, holy man!" </s>
+<s> The Hermit crossed his brow. </s>
+<s> "Say quick," quoth he, "I bid thee say-- </s>
+<s> What manner of man art thou?" </s>
+<s> Forthwith this frame of mine was wrenched </s>
+<s> With a woeful agony, </s>
+<s> Which forced me to begin my tale; </s>
+<s> And then it left me free. </s>
+<s> Since then, at an uncertain hour, </s>
+<s> That agony returns; </s>
+<s> And till my ghastly tale is told, </s>
+<s> This heart within me burns. </s>
+<s> I pass, like night, from land to land; </s>
+<s> I have strange power of speech; </s>
+<s> That moment that his face I see, </s>
+<s> I know the man that must hear me: </s>
+<s> To him my tale I teach. </s>
+<s> What loud uproar bursts from that door! </s>
+<s> The wedding-guests are there: </s>
+<s> But in the garden-bower the bride </s>
+<s> And bride-maids singing are: </s>
+<s> And hark the little vesper bell, </s>
+<s> Which biddeth me to prayer! </s>
+<s> O Wedding-Guest! this soul hath been </s>
+<s> Alone on a wide wide sea: </s>
+<s> So lonely 'twas, that God himself </s>
+<s> Scarce seemed there to be. </s>
+<s> O sweeter than the marriage-feast, </s>
+<s> 'Tis sweeter far to me, </s>
+<s> To walk together to the kirk </s>
+<s> With a goodly company!-- </s>
+<s> To walk together to the kirk, </s>
+<s> And all together pray, </s>
+<s> While each to his great Father bends, </s>
+<s> Old men, and babes, and loving friends, </s>
+<s> And youths and maidens gay! </s>
+<s> Farewell, farewell! but this I tell </s>
+<s> To thee, thou Wedding-Guest! </s>
+<s> He prayeth well, who loveth well </s>
+<s> Both man and bird and beast. </s>
+<s> He prayeth best, who loveth best </s>
+<s> All things both great and small; </s>
+<s> For the dear God who loveth us </s>
+<s> He made and loveth all. </s>
+<s> The Mariner, whose eye is bright, </s>
+<s> Whose beard with age is hoar, </s>
+<s> Is gone: and now the Wedding-Guest </s>
+<s> Turned from the bridegroom's door. </s>
+<s> He went like one that hath been stunned, </s>
+<s> And is of sense forlorn: </s>
+<s> A sadder and a wiser man, </s>
+<s> He rose the morrow morn. </s>
