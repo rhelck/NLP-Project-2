@@ -1,36 +1,80 @@
+from os import uname
 import numpy as np
 import math
+import string
+
+from sklearn.model_selection import StratifiedShuffleSplit
 
 #TODO: should probably make a main function and put all other code in functions instead of haveing one long script
 
 #takes input from file
 #TODO: should probably make it so user can input a file path/name (in command line when running python file)
 lines = []
+testlines = []
 
-with open('text.txt') as f:
+with open('text3.txt') as f:
     for line in f.readlines():
         #Removes \n
         line = line.strip()
-        lines.append(line)
+        line = line.translate(str.maketrans('', '', string.punctuation))
+        if line != "":
+            line = "<s> " + line + " </s>"
+            lines.append(line)
+    f.close()
+
+with open('text2.txt') as testf:    #reading data for testing
+    for testline in testf.readlines():
+        #Removes \n
+        testline = testline.strip()
+        testline = testline.translate(str.maketrans('', '', string.punctuation))
+        if testline != "":
+            testline =  "<s> " + testline + " </s>"
+            testlines.append(testline)
+    f.close()
+
+# print(lines)
 
 # print("Lines: ", lines)
 
 #creates individual words
 #TODO: probably need to add normalization before this to remove punctuation if thats what we want to do
 words = []
+testwords = []
+
+for testline in testlines:
+    testsplit_sentence = testline.split()
+    for testword in testsplit_sentence:
+        #if testword != ("<s>") and testword != ( "</s>"):
+        testword = testword.lower()
+        testwords.append(testword)
+        # print(testword)
+
+#Creates unique list of words in test set
+testunique_words = np.unique(testwords)
+#print("testuniques: ", testunique_words)
+
 for line in lines:
     #splits each sentence at the space
     split_sentence = line.split()
     for word in split_sentence:
+        word = word.lower()
+        if word not in testunique_words:
+            word = "<UNK>"
         words.append(word)
+        # print(word)
+
+#Creates unigrams for train set
+unique_words = np.unique(words)
+#print("uniques: ", unique_words)
+unigram_counts = dict.fromkeys(unique_words,0)
+
+#print(words)
+#print(testwords)
 
 total_word_count = len(words)
+testtotal_word_count = len(testwords)
 
-# print("Words: ", words)
 
-#Creates unigrams
-unique_words = np.unique(words)
-unigram_counts = dict.fromkeys(unique_words,0)
 
 for word in words:
     unigram_counts[word] += 1
@@ -112,13 +156,34 @@ for word in unique_words:
 
 # print("add_one_prob: ", add_one_prob["I"])
 
-#perplexity calculation
+#perplexity calculation for MLE
+
 sumLogMLE = 0
 powerAndBase = 10
-for word in unique_words:
-    for word2 in unique_words:
-        if(p_bigrams[word][word2]!=0):
+# print(p_bigrams)
+# print(unique_words)
+# print(testunique_words)
+for word in testunique_words:
+    for word2 in testunique_words:
+        # print(p_bigrams[word][word2])
+        if not ((word in p_bigrams.keys()) and (word2 in p_bigrams[word].keys())): #and (p_bigrams[word].has_key(word2)):
+            # print(p_bigrams[word]["<UNK>"])
+            sumLogMLE += math.log(p_unigrams["<UNK>"],powerAndBase)
+            # sumLogMLE += math.log(p_bigrams[word]["<UNK>"],powerAndBase)
+        elif(p_bigrams[word][word2] != 0):
+            print("elif")
             sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
 print("sumLogMLE: " + str(sumLogMLE))
-result = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
-print("result: " + str(result))
+perplexity = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
+print("PP(W): " + str(perplexity))
+
+# perplexity calculation for add-one
+# sumLogPerplexity = 0
+# powerAndBase = 10
+# for word in unique_words:
+#     for word2 in unique_words:
+#         if(add_one_prob[word][word2]!=0):
+#             sumLogPerplexity += math.log(add_one_prob[word][word2],powerAndBase)
+# print("sumLogPerplexity: " + str(sumLogPerplexity))
+# perplexity = math.pow((-1/total_word_count)*sumLogPerplexity,powerAndBase)
+# print("PP(W): " + str(perplexity))
