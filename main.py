@@ -2,6 +2,7 @@ from os import uname
 import numpy as np
 import math
 import string
+import random
 
 from sklearn.model_selection import StratifiedShuffleSplit
 
@@ -143,25 +144,35 @@ for index, word in enumerate(words):
     if index < len(words) and index != 0:
         p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index - 1]][words[index]] / unigram_counts[words[index - 1]]
 
-print("bigram probabilities: ", p_bigrams)
+# print("bigram probabilities: ", p_bigrams)
 
 #checks to see if bigram probability adds up to one
-probabiltiy_check = 0
 for probability in p_bigrams:
+    probabiltiy_check = 0
     for probability2 in p_bigrams[probability]:
         probabiltiy_check += p_bigrams[probability][probability2]
-print("bigram total probability: ", probabiltiy_check)
+    # print("bigram total probability: ", probabiltiy_check)
 
 # sentence generation
-curr_symbol = "<s>"
-sentence = ""
-sentence_length = 0 # prevent infinite loop
-while curr_symbol != "</s>" and sentence_length < 20:
-    sentence += " " + curr_symbol
-    curr_symbol = max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get)
-    sentence_length += 1
-sentence += " </s>"
-print(sentence)
+for x in range(0,5):
+    curr_symbol = "<s>"
+    sentence = ""
+    sentence_length = 0 # prevent infinite loop
+    #while sentence has not ended and the sentence is shorter than the maximum length
+    while curr_symbol != "</s>" and sentence_length < 20:
+        random_value = random.random()
+        sumValue = 0
+        sentence += " " + curr_symbol
+        for i in p_bigrams[curr_symbol]:
+            sumValue += p_bigrams[curr_symbol][i]
+            if ((sumValue > random_value)):
+                curr_symbol = i
+                break
+        # curr_symbol = max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get)
+        sentence_length += 1
+    sentence += " </s>"
+
+    print(sentence)
 
 # add one
 add_one_prob = dict()
