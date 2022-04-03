@@ -13,7 +13,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 lines = []
 testlines = []
 
-with open('text3.txt') as f:
+with open('american_journal.txt') as f:
     for line in f.readlines():
         #Removes \n
         line = line.strip()
@@ -23,7 +23,7 @@ with open('text3.txt') as f:
             lines.append(line)
     f.close()
 
-with open('text2.txt') as testf:    #reading data for testing
+with open('text3.txt') as testf:    #reading data for testing
     for testline in testf.readlines():
         #Removes \n
         testline = testline.strip()
@@ -70,7 +70,7 @@ unique_words = np.unique(words)
 unigram_counts = dict.fromkeys(unique_words,0)
 
 #print(words)
-#print(testwords)
+# print(testwords)
 
 total_word_count = len(words)
 testtotal_word_count = len(testwords)
@@ -91,13 +91,15 @@ unique_words = np.unique(words)
 #print("uniques: ", unique_words)
 unigram_counts = dict.fromkeys(unique_words,0)
 
-total_word_count = len(words)
-testtotal_word_count = len(testwords)
-
 for word in words:
     unigram_counts[word] += 1
 
 # print("unigram counts with UNK: ", unigram_counts)
+
+#Changes words taht are in test set but not training set with <UNK>
+for word in testwords:
+    if word not in unique_words:
+        testwords[testwords.index(word)] = "<UNK>"
 
 #creates bigrams
 bigram_count = dict()
@@ -139,7 +141,7 @@ for word in unique_words:
     sub_bigram = dict.fromkeys(unique_words,0)
     p_bigrams[word] = sub_bigram
 
-#updates disctionary with MLE probailities
+#updates dictionary with MLE probailities
 for index, word in enumerate(words):
     if index < len(words) and index != 0:
         p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index - 1]][words[index]] / unigram_counts[words[index - 1]]
@@ -196,6 +198,13 @@ for word in unique_words:
 
 # print("add_one_prob: ", add_one_prob["I"])
 
+#checks to see if bigram probability adds up to one
+for probability in add_one_prob:
+    probabiltiy_check = 0
+    for probability2 in add_one_prob[probability]:
+        probabiltiy_check += add_one_prob[probability][probability2]
+    # print("add_one total probability: ", probabiltiy_check)
+
 #perplexity calculation for MLE
 
 sumLogMLE = 0
@@ -203,27 +212,38 @@ powerAndBase = 10
 # print(p_bigrams)
 # print(unique_words)
 # print(testunique_words)
-for word in testunique_words:
-    for word2 in testunique_words:
+
+#for word in testunique_words:
+#    for word2 in testunique_words:
         # print(p_bigrams[word][word2])
-        if not ((word in p_bigrams.keys()) and (word2 in p_bigrams[word].keys())): #and (p_bigrams[word].has_key(word2)):
+#        if not ((word in p_bigrams.keys()) and (word2 in p_bigrams[word].keys())): #and (p_bigrams[word].has_key(word2)):
             # print(p_bigrams[word]["<UNK>"])
-            sumLogMLE += math.log(p_unigrams["<UNK>"],powerAndBase)
+#            sumLogMLE += math.log(p_unigrams["<UNK>"],powerAndBase)
             # sumLogMLE += math.log(p_bigrams[word]["<UNK>"],powerAndBase)
-        elif(p_bigrams[word][word2] != 0):
+#        elif(p_bigrams[word][word2] != 0):
             # print("elif")
-            sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
-print("sumLogMLE: " + str(sumLogMLE))
-perplexity = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
-print("PP(W): " + str(perplexity))
+#            sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
+#print("sumLogMLE: " + str(sumLogMLE))
+#perplexity = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
+#print("PP(W): " + str(perplexity))
 
 # perplexity calculation for add-one
-# sumLogPerplexity = 0
-# powerAndBase = 10
-# for word in unique_words:
+i = 0
+sumLogPerplexity = 0
+powerAndBase = 10
+
+for index, word in enumerate(testwords):
+    if index < len(testwords) and index != 0:
+        sumLogPerplexity += math.log(add_one_prob[words[index - 1]][words[index]],powerAndBase)
+        i = i + 1
+
+# for word in testwords:s
 #     for word2 in unique_words:
-#         if(add_one_prob[word][word2]!=0):
-#             sumLogPerplexity += math.log(add_one_prob[word][word2],powerAndBase)
-# print("sumLogPerplexity: " + str(sumLogPerplexity))
-# perplexity = math.pow((-1/total_word_count)*sumLogPerplexity,powerAndBase)
-# print("PP(W): " + str(perplexity))
+#         sumLogPerplexity += math.log(add_one_prob[word][word2],powerAndBase)
+#         sumProbability += add_one_prob[word][word2]
+        
+print("sumLogPerplexity: " + str(sumLogPerplexity))
+print("n: ", testtotal_word_count)
+perplexity = math.pow(((-1/testtotal_word_count)*sumLogPerplexity),powerAndBase)
+print("PP(W): " + str(perplexity))
+print("i: ",str(i))
