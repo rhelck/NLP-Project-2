@@ -58,8 +58,8 @@ for line in lines:
     split_sentence = line.split()
     for word in split_sentence:
         word = word.lower()
-        if word not in testunique_words:
-            word = "<UNK>"
+        # if word not in testunique_words:
+        #     word = "<UNK>"
         words.append(word)
         # print(word)
 
@@ -74,12 +74,29 @@ unigram_counts = dict.fromkeys(unique_words,0)
 total_word_count = len(words)
 testtotal_word_count = len(testwords)
 
-
-
 for word in words:
     unigram_counts[word] += 1
 
 # print("unigram count: ", unigram_counts)
+
+#Replace all words that only appear once with <UNK>
+for word in unigram_counts:
+    if unigram_counts[word] == 1:
+        words[words.index(word)] = "<UNK>"
+
+#reruns unique words and unigram counts
+#Creates unigrams for train set
+unique_words = np.unique(words)
+#print("uniques: ", unique_words)
+unigram_counts = dict.fromkeys(unique_words,0)
+
+total_word_count = len(words)
+testtotal_word_count = len(testwords)
+
+for word in words:
+    unigram_counts[word] += 1
+
+# print("unigram counts with UNK: ", unigram_counts)
 
 #creates bigrams
 bigram_count = dict()
@@ -107,6 +124,12 @@ for word in unique_words:
 
 # print("unigram probabilities: ", p_unigrams)
 
+#checks to see if unigram probability adds up to one
+probabiltiy_check = 0
+for probability in p_unigrams:
+    probabiltiy_check += p_unigrams[probability]
+# print("unigram total probability: ", probabiltiy_check)
+
 #Dictionary of bigram probabilities
 p_bigrams = dict()
 
@@ -120,10 +143,16 @@ for index, word in enumerate(words):
     if index < len(words) and index != 0:
         p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index - 1]][words[index]] / unigram_counts[words[index - 1]]
 
-# print("bigram probabilities: ", p_bigrams["green"])
+print("bigram probabilities: ", p_bigrams)
+
+#checks to see if bigram probability adds up to one
+probabiltiy_check = 0
+for probability in p_bigrams:
+    for probability2 in p_bigrams[probability]:
+        probabiltiy_check += p_bigrams[probability][probability2]
+print("bigram total probability: ", probabiltiy_check)
 
 # sentence generation
-
 curr_symbol = "<s>"
 sentence = ""
 sentence_length = 0 # prevent infinite loop
@@ -171,7 +200,7 @@ for word in testunique_words:
             sumLogMLE += math.log(p_unigrams["<UNK>"],powerAndBase)
             # sumLogMLE += math.log(p_bigrams[word]["<UNK>"],powerAndBase)
         elif(p_bigrams[word][word2] != 0):
-            print("elif")
+            # print("elif")
             sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
 print("sumLogMLE: " + str(sumLogMLE))
 perplexity = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)

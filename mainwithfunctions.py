@@ -18,7 +18,7 @@ def readData(docName, lineName):
 
 
 readData('text2.txt',lines)
-readData('text1.txt',testlines)
+readData('text.txt',testlines)
 
 # def readLearningData():
 #     with open('text2.txt') as f:
