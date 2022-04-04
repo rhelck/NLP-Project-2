@@ -10,6 +10,16 @@ This README file will provide both an overview of the contents of this package, 
 
 Our package includes the source code of the progam (see main.py), as well as training and text corpora. ADD MORE ONCE WE ARE DONE
 
+## Requirements
+
+Operating System: Ubuntu (whatever version ELSA is running)
+Compilers: Python 3 (whatever version we've been using)
+Libraries: Do we need to prompt the user to install numpy etc.?
+
+## Installation
+
+## Use
+
 Normalization Plan:
 remove all punctuation
 remove all [] {} ()
