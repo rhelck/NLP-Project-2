@@ -13,7 +13,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 lines = []
 testlines = []
 
-with open('american_journal.txt') as f:
+with open('text3.txt') as f:
     for line in f.readlines():
         #Removes \n
         line = line.strip()
@@ -23,7 +23,7 @@ with open('american_journal.txt') as f:
             lines.append(line)
     f.close()
 
-with open('text3.txt') as testf:    #reading data for testing
+with open('text2.txt') as testf:    #reading data for testing
     for testline in testf.readlines():
         #Removes \n
         testline = testline.strip()
@@ -228,14 +228,16 @@ powerAndBase = 10
 #print("PP(W): " + str(perplexity))
 
 # perplexity calculation for add-one
-i = 0
+#i = 0
 sumLogPerplexity = 0
-powerAndBase = 10
+powerAndBase = 50
 
 for index, word in enumerate(testwords):
     if index < len(testwords) and index != 0:
+        #both the np.log or math.log tactics will work
+        #sumLogPerplexity += np.log(add_one_prob[words[index - 1]][words[index]])
         sumLogPerplexity += math.log(add_one_prob[words[index - 1]][words[index]],powerAndBase)
-        i = i + 1
+        #i = i + 1
 
 # for word in testwords:s
 #     for word2 in unique_words:
@@ -244,6 +246,7 @@ for index, word in enumerate(testwords):
         
 print("sumLogPerplexity: " + str(sumLogPerplexity))
 print("n: ", testtotal_word_count)
-perplexity = math.pow(((-1/testtotal_word_count)*sumLogPerplexity),powerAndBase)
+#perplexity = np.exp(((-1/testtotal_word_count)*sumLogPerplexity))
+perplexity = math.pow(powerAndBase,((-1/testtotal_word_count)*sumLogPerplexity))
 print("PP(W): " + str(perplexity))
 print("i: ",str(i))
