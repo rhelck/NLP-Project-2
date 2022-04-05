@@ -101,7 +101,7 @@ for word in words:
 
 #Replace all words that only appear once with <UNK>
 for word in unigram_counts:
-    if unigram_counts[word] <= 15:
+    if unigram_counts[word] <= 1:
         words[words.index(word)] = "<UNK>"
 
 #reruns unique words and unigram counts
@@ -140,7 +140,7 @@ for index, word in enumerate(words):
 # print("bigram counts: ", bigram_count)
 
 #Dictionary of unigram probabilities
-p_unigrams = dict.fromkeys(unique_words,0)
+p_unigrams = dict.fromkeys(unique_words,0)  
 for word in unique_words:
     p_unigrams[word] = unigram_counts[word] / total_word_count
 
@@ -175,26 +175,26 @@ for probability in p_bigrams:
     # print("bigram total probability: ", probabiltiy_check)
 
 # sentence generation
-for x in range(0,5):
-    curr_symbol = "<s>"
-    sentence = ""
-    sentence_length = 0 # prevent infinite loop
-    #while sentence has not ended and the sentence is shorter than the maximum length
-    while curr_symbol != "</s>" and sentence_length < 20:
-        random_value = random.random()
-        sumValue = 0
-        sentence += " " + curr_symbol
-        for i in p_bigrams[curr_symbol]:
-            sumValue += p_bigrams[curr_symbol][i]
-            if ((sumValue > random_value)):
-                curr_symbol = i
-                break
-        # curr_symbol = max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get)
-        sentence_length += 1
-    sentence += " </s>"
+# print("Generating sentences for MLE bigrams")
+# for x in range(0,5):
+#     curr_symbol = "<s>"
+#     sentence = ""
+#     sentence_length = 0 # prevent infinite loop
+#     #while sentence has not ended and the sentence is shorter than the maximum length
+#     while curr_symbol != "</s>" and sentence_length < 20:
+#         random_value = random.random()
+#         sumValue = 0
+#         sentence += " " + curr_symbol
+#         for i in p_bigrams[curr_symbol]:
+#             sumValue += p_bigrams[curr_symbol][i]
+#             if ((sumValue > random_value)):
+#                 curr_symbol = i
+#                 break
+#         # curr_symbol = max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get)
+#         sentence_length += 1
+#     sentence += " </s>"
 
-    print(sentence)
-
+#     print(sentence)
 
 
 #creates unigram add_one
@@ -202,10 +202,15 @@ add_one_prob_uni = dict.fromkeys(unique_words,0)
 for word in unique_words:
     add_one_prob_uni[word] = (unigram_counts[word] + 1) / (total_word_count + len(unique_words))
 
+print("**********")
+print("total word count: ", total_word_count)
+print("cardinality of vocabulary: ", len(unique_words))
+print("total test word count: ", testtotal_word_count)
 # print(add_one_prob_uni)
+print("**********")
 
-# add one
-add_one_prob = dict()
+# add one 
+add_one_prob = dict()   # stores all add_one probabilities
 
 #Creates sub dictionary that goes into larger dictionary
 for word in unique_words:
@@ -236,7 +241,6 @@ powerAndBase = 10
 # print(testunique_words)
 
 # perplexity calculation for add-one
-i = 0
 sumLogPerplexity_uni = 0
 sumLogPerplexity = 0
 powerAndBase = 10
@@ -250,9 +254,8 @@ perplexity_uni = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplex
 #add_one bigram perplexity
 for index, word in enumerate(testwords):
     if index < len(testwords) and index != 0:
-        sumLogPerplexity += math.log(add_one_prob[words[index - 1]][words[index]],powerAndBase)
+        sumLogPerplexity += math.log(add_one_prob[words[index-1]][words[index]],powerAndBase)
         #sumLogPerplexity += np.log(add_one_prob[words[index - 1]][words[index]])
-        i = i + 1
 
 perplexity = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplexity))
         
@@ -264,33 +267,197 @@ print("Bigram Perplexity: " + str(perplexity))
 # print("i: ",str(i))
 #print("percent training: ",str(traincount/(traincount+testcount)))
 
+def generateUnigramSentences(mlebool,k):
+    if(mlebool==True):
+        for x in range(0,k):
+            curr_symbol = "<s>"
+            sentence = ""
+            sentence_length = 0 # prevent infinite loop
+            #while sentence has not ended and the sentence is shorter than the maximum length
+            
+            while curr_symbol != "</s>" and sentence_length < 20:
+                random_value = random.random()
+                sumValue = 0
+                sentence += " " + curr_symbol
+                for i in p_unigrams:
+                    sumValue += p_unigrams[i]
+                    if((sumValue>random_value)):
+                        curr_symbol=i
+                        break
+                sentence_length += 1
+            sentence += " </s>"
+            print(sentence)
+    if(mlebool==False):
+        for x in range(0,k):
+            curr_symbol = "<s>"
+            sentence = ""
+            sentence_length = 0 # prevent infinite loop
+            #while sentence has not ended and the sentence is shorter than the maximum length
+            
+            while curr_symbol != "</s>" and sentence_length < 20:
+                random_value = random.random()
+                sumValue = 0
+                sentence += " " + curr_symbol
+                for i in add_one_prob_uni:
+                    sumValue += add_one_prob_uni[i]
+                    if((sumValue>random_value)):
+                        curr_symbol=i
+                        break
+                sentence_length += 1
+            sentence += " </s>"
+            print(sentence)    
+
+            #count of word + 1 / (number of word occurences + V.card())
+        
+def generateBigramSentences(mlebool,k,length):
+    if(mlebool==True):
+        for x in range(0,k):
+            curr_symbol = "<s>"
+            sentence = ""
+            sentence_length = 0 # prevent infinite loop
+            #while sentence has not ended and the sentence is shorter than the maximum length
+            
+            while curr_symbol != "</s>" and sentence_length < length:
+                random_value = random.random()
+                sumValue = 0
+                sentence += " " + curr_symbol
+                for i in p_bigrams[curr_symbol]:
+                    sumValue += p_bigrams[curr_symbol][i]
+                    if ((sumValue > random_value)):
+                        curr_symbol = i
+                        break
+                sentence_length += 1
+            sentence += " </s>"
+            print(sentence)
+    else:
+        for x in range(0,k):
+            curr_symbol = "<s>"
+            sentence = ""
+            sentence_length = 0 # prevent infinite loop
+            #while sentence has not ended and the sentence is shorter than the maximum length
+            while curr_symbol != "</s>" and sentence_length < length:
+                random_value = random.random()
+                sumValue = 0
+                sentence += " " + curr_symbol
+                for i in add_one_prob[curr_symbol]:
+                    sumValue += add_one_prob[curr_symbol][i]
+                    if ((sumValue > random_value)):
+                        curr_symbol = i
+                        break
+                sentence_length += 1
+            sentence += " </s>"
+
+            print(sentence)
+print("unigram mle sentences")
+generateUnigramSentences(mlebool=True,k=5)
+print()
+print("unigram add-1 sentences")
+generateUnigramSentences(mlebool=False,k=4)
+print()
+print("bigram mle sentences")
+generateBigramSentences(mlebool=True,k=5,length=20)
+print()
+print("bigram add-1 sentences")
+generateBigramSentences(mlebool=False,k=5,length=20)
+print()
+
 #Prints the top ten most most probable uni grams and their probabilities
-for x in range(0,10):
-    most_popular = max(p_unigrams, key=p_unigrams.get)
-    print(str(most_popular) + ": " + str(unigram_counts[most_popular]) + " : " + str(p_unigrams[most_popular]))
-    del p_unigrams[most_popular]
+# for x in range(0,10):
+#     most_popular = max(p_unigrams, key=p_unigrams.get)
+#     print(str(most_popular) + ": " + str(unigram_counts[most_popular]) + " : " + str(p_unigrams[most_popular]))
+#     del p_unigrams[most_popular]
     
 #Prints the top ten most most probable bi grams and their probabilities
-top_ten = [("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0)]
-biggest_list = []
-for x in range(0,10):
-    biggest_bigram = ("", 0)
-    for word in bigram_count:
-        for word2 in bigram_count:
-            # print(bigram_count[word][word2])
-            # print(biggest_bigram[1])
-            # print()
-            if bigram_count[word][word2] > biggest_bigram[1]:
-                biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+# top_ten = [("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0)]
+# biggest_list = []
+# for x in range(0,10):
+#     biggest_bigram = ("", 0)
+#     for word in bigram_count:
+#         for word2 in bigram_count:
+#             # print(bigram_count[word][word2])
+#             # print(biggest_bigram[1])
+#             # print()
+#             if bigram_count[word][word2] > biggest_bigram[1]:
+#                 biggest_bigram = (word + " " + word2, bigram_count[word][word2])
 
-    biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+#     biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
 
-    #"Removes" the biggest bigram from the data
-    bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
+#     #"Removes" the biggest bigram from the data
+#     bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
 
-    biggest_list.append(biggest_bigram)
+#     biggest_list.append(biggest_bigram)
 
-print(biggest_list)
+# print(biggest_list)
+
+def findTopKBigrams(k,mlebool):
+    if(mlebool==True):
+        top_ten = [("",0)]*k
+        biggest_list = []
+        for x in range(0,k):
+            biggest_bigram = ("", 0)
+            for word in bigram_count:
+                for word2 in bigram_count:
+                    if bigram_count[word][word2] > biggest_bigram[1]:
+                        biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+
+            biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+
+            #"Removes" the biggest bigram from the data
+            bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
+
+            biggest_list.append(biggest_bigram)
+    elif(mlebool==False):
+        top_ten = [("",0)]*k
+        biggest_list = []
+        for x in range(0,k):
+            biggest_bigram = ("", 0)
+            for word in bigram_count:
+                for word2 in bigram_count:
+                    if bigram_count[word][word2] > biggest_bigram[1]:
+                        biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+
+            biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], add_one_prob[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+
+            #"Removes" the biggest bigram from the data
+            bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
+
+            biggest_list.append(biggest_bigram)
+
+    # print(biggest_list)
+    for bigram in biggest_list:
+        print(str(bigram[0].split()[0]) + " " + str(bigram[0].split()[1]) + " : " + str(bigram[1]) + " : " + str(bigram[2]))
+
+def findTopKUnigrams(k,mlebool):
+    if(mlebool==True):
+        for x in range(0,k):
+            most_popular = max(p_unigrams, key=p_unigrams.get)
+            print(str(most_popular) + ": " + str(unigram_counts[most_popular]) + " : " + str(p_unigrams[most_popular]))
+            del p_unigrams[most_popular]
+    else:
+        for y in range(0,k):
+            most_popular = max(add_one_prob_uni, key=add_one_prob_uni.get)
+            print(str(most_popular) + " : " + str(unigram_counts[most_popular]) + " : " + str(add_one_prob_uni[most_popular]))
+            del add_one_prob_uni[most_popular]
+
+
+# print("Top 10 MLE Unigrams")
+# print("unigram : # of occurances : MLE probability")
+# findTopKUnigrams(k=10,mlebool=True)
+# print()
+print("Top 10 add-1 Unigrams")
+print("unigram : # of occurances : add-1 probability")
+findTopKUnigrams(k=10,mlebool=False)
+print()
+
+
+# print("Top 10 MLE Bigrams")
+# print("bigram : # of occurances : MLE probability")
+# findTopKBigrams(k=10,mlebool=True)
+# print()
+print("Top 10 add-1 Bigrams")
+print("bigram : # of occurances : add-1 probability")
+findTopKBigrams(k=10,mlebool=False)
+print()
 
 # for word in bigram_count:
 #     for word2 in bigram_count:
