@@ -6,32 +6,13 @@ import random
 
 from sklearn.model_selection import StratifiedShuffleSplit
 
-#TODO: should probably make a main function and put all other code in functions instead of haveing one long script
+
 
 #takes input from file
-#TODO: should probably make it so user can input a file path/name (in command line when running python file)
+
 lines = []
 testlines = []
 
-# with open('text2.txt') as f:
-#    for line in f.readlines():
-#         #Removes \n
-#        line = line.strip()
-#        line = line.translate(str.maketrans('', '', string.punctuation))
-#        if line != "":
-#            line = "<s> " + line + " </s>"
-#            lines.append(line)
-# f.close()
-
-# with open('text2.txt') as testf:    #reading data for testing
-#    for testline in testf.readlines():
-#         #Removes \n
-#        testline = testline.strip()
-#        testline = testline.translate(str.maketrans('', '', string.punctuation))
-#        if testline != "":
-#            testline =  "<s> " + testline + " </s>"
-#            testlines.append(testline)
-# f.close()
 
 testcount = 0
 traincount = 0
@@ -51,12 +32,9 @@ with open('text3.txt') as f:
                 traincount = traincount + 1
     f.close()
 
-# print(lines)
-
-# print("Lines: ", lines)
 
 #creates individual words
-#TODO: probably need to add normalization before this to remove punctuation if thats what we want to do
+
 words = []
 testwords = []
 
@@ -66,7 +44,7 @@ for testline in testlines:
         #if testword != ("<s>") and testword != ( "</s>"):
         testword = testword.lower()
         testwords.append(testword)
-        # print(testword)
+        
 
 #Creates unique list of words in test set
 testunique_words = np.unique(testwords)
@@ -80,15 +58,13 @@ for line in lines:
         # if word not in testunique_words:
         #     word = "<UNK>"
         words.append(word)
-        # print(word)
+        
 
 #Creates unigrams for train set
 unique_words = np.unique(words)
 #print("uniques: ", unique_words)
 unigram_counts = dict.fromkeys(unique_words,0)
 
-#print(words)
-# print(testwords)
 
 total_word_count = len(words)
 # print("total word count: ", total_word_count)
@@ -113,7 +89,7 @@ unigram_counts = dict.fromkeys(unique_words,0)
 for word in words:
     unigram_counts[word] += 1
 
-# print("unigram counts with UNK: ", unigram_counts)
+
 
 #Changes words taht are in test set but not training set with <UNK>
 for word in testwords:
@@ -174,29 +150,30 @@ for probability in p_bigrams:
         probabiltiy_check += p_bigrams[probability][probability2]
     # print("bigram total probability: ", probabiltiy_check)
 
-
-
-
-#creates unigram add_one
-add_one_prob_uni = dict.fromkeys(unique_words,0)
-for word in unique_words:
-    add_one_prob_uni[word] = (unigram_counts[word] + 1) / (total_word_count + len(unique_words))
-
-# print(add_one_prob_uni)
-
-# add one
+add_one_prob_uni = dict()
 add_one_prob = dict()
 
-#Creates sub dictionary that goes into larger dictionary
-for word in unique_words:
-    sub_bigram = dict.fromkeys(unique_words,0)
-    add_one_prob[word] = sub_bigram
+def addOneProb(self, parameter_list):
+    #creates unigram add_one
+    add_one_prob_uni = dict.fromkeys(unique_words,0)
+    for word in unique_words:
+        add_one_prob_uni[word] = (unigram_counts[word] + 1) / (total_word_count + len(unique_words))
 
-#puts subdictionary into the larger dictionary
-for word in unique_words:
-    for word2 in unique_words:
-        # print("word: "+word+" word2: "+word2)
-        add_one_prob[word][word2] =  (bigram_count[word][word2] + 1) / (unigram_counts[word] + len(unique_words))
+
+
+    # add one
+    #add_one_prob = dict()
+
+    #Creates sub dictionary that goes into larger dictionary
+    for word in unique_words:
+        sub_bigram = dict.fromkeys(unique_words,0)
+        add_one_prob[word] = sub_bigram
+
+    #puts subdictionary into the larger dictionary
+    for word in unique_words:
+        for word2 in unique_words:
+            
+            add_one_prob[word][word2] =  (bigram_count[word][word2] + 1) / (unigram_counts[word] + len(unique_words))
 
 # print("add_one_prob: ", add_one_prob["I"])
 
@@ -293,13 +270,11 @@ generateUnigramSentences(mlebool=True,k=5)
 generateUnigramSentences(mlebool=False,k=4)
 generateBigramSentences(mlebool=True,k=4)
 generateBigramSentences(mlebool=False,k=4)
-#perplexity calculation for MLE
 
+#perplexity calculation for MLE
 sumLogMLE = 0
 powerAndBase = 10
-# print(p_bigrams)
-# print(unique_words)
-# print(testunique_words)
+
 
 # perplexity calculation for add-one
 i = 0
@@ -385,22 +360,4 @@ def findTopKBigrams(k,mlebool):
     print(biggest_list)
 findTopKBigrams(k=10,mlebool=False)
 
-# for word in bigram_count:
-#     for word2 in bigram_count:
-#         #Goes thorugh every item in top ten list
-#         index = 0
-#         for list_word in top_ten:
-#             if list_word[0] == "" and list_word[1] == 0:
-#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
-#                 top_ten.pop()
-#                 break
-#             elif bigram_count[word][word2] > bigram_count[list_word[0].split()[0]][list_word[0].split()[1]]:
-#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
-#                 top_ten.pop()
-#                 break
-#             index += 1
 
-# print(top_ten)
-# top_ten.insert(0, ("above the", 1.0))
-# print(top_ten[0][0].split()[0])
-# print(max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get))
