@@ -13,7 +13,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 lines = []
 testlines = []
 
-# with open('journal1.txt') as f:
+# with open('text2.txt') as f:
 #    for line in f.readlines():
 #         #Removes \n
 #        line = line.strip()
@@ -23,7 +23,7 @@ testlines = []
 #            lines.append(line)
 # f.close()
 
-# with open('journal2.txt') as testf:    #reading data for testing
+# with open('text2.txt') as testf:    #reading data for testing
 #    for testline in testf.readlines():
 #         #Removes \n
 #        testline = testline.strip()
@@ -35,7 +35,7 @@ testlines = []
 
 testcount = 0
 traincount = 0
-with open('text3.txt') as f:
+with open('australia_rural.txt') as f:
     for line in f.readlines():
         #Removes \n
         line = line.strip()
@@ -101,7 +101,7 @@ for word in words:
 
 #Replace all words that only appear once with <UNK>
 for word in unigram_counts:
-    if unigram_counts[word] == 1:
+    if unigram_counts[word] <= 15:
         words[words.index(word)] = "<UNK>"
 
 #reruns unique words and unigram counts
@@ -267,7 +267,7 @@ print("Bigram Perplexity: " + str(perplexity))
 #Prints the top ten most most probable uni grams and their probabilities
 for x in range(0,10):
     most_popular = max(p_unigrams, key=p_unigrams.get)
-    print(str(most_popular) + ": " + str(p_unigrams[most_popular]))
+    print(str(most_popular) + ": " + str(unigram_counts[most_popular]) + " : " + str(p_unigrams[most_popular]))
     del p_unigrams[most_popular]
     
 #Prints the top ten most most probable bi grams and their probabilities
@@ -282,9 +282,11 @@ for x in range(0,10):
             # print()
             if bigram_count[word][word2] > biggest_bigram[1]:
                 biggest_bigram = (word + " " + word2, bigram_count[word][word2])
-    bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
 
-    # biggest_bigram = (biggest_bigram[0], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+    biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+
+    #"Removes" the biggest bigram from the data
+    bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
 
     biggest_list.append(biggest_bigram)
 

@@ -1,0 +1,12 @@
+Our group ran our MLE bigram language model on two corpora: australia_rural.txt, which is a file containing transciptions of broadcasts from the Australian Broadcasting Corporation (ABC). As the name of the file
+implies, the subjects of these broadcasts tend to pertain to events occuring in sparcely populated parts of Australia, as well as pieces of news pertaining to farmers and agriculturalists. The second corpus upon which our MLE bigram model was run is austin.txt, which is a text file 
+containing the contents of the novel 'Sense and Sensibility' by Jane Austin. 
+In both cases, the corpus was divided into training and test corpora during pre-processing, where approximately 75 percent of the orginal corpus was using for training, and the remainder for testing.
+When the MLE model was ran on australia_rural.txt, the most common bigrams included bigrams such as "he said", "says the", and "said </s>" (implying that the sentence ended with "said"). This is likely
+due to the fact that this corpus included secondhand sources and in-person interviews, where individuals or organizations may have been quoted or cited by reporters. Many of the other top-ten most likely 
+bigrams, such as "of the" and "in the" seem to derive from explanations of geogaphical localation, which would be expected from news reports.
+Among the ten most likely unigrams, 
+
+However, in austin.txt, different patterns were observed among the ten most likely bigrams and unigrams.
+
+Results:
