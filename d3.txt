@@ -1,30 +1,41 @@
 What was easy about this assignment?
 
-Translating the formulae in the textbook into code for the program was easy. 
+Our group was able to come up with an efficient way to store the bigrams and unigrams quickly, 
+and we were able to implement ways to compute unsmoothed bigram probability estimates using MLE, 
+as well as probabilistically generate sentences.
+Translating the formulae in the textbook into code for the program was also easy, in addition to
+figuring out how to split the program into different functions.
 
 What was challenging about this assignment?
 
 One thing that was challenging was figuring out if the results we got were reasonable, or if our program had a bug. 
-Also, at first, it was more intuitive to not split up the program into functions, so modularizing this program took some time.
+One example of this was with Add-1 smoothing. We had implemented the formula, but
+we were not getting the right numbers, and it took multiple revisions of
+the formula to get the right probabilities. A similar problem occurred with the perplexity of test sets of data.
+The program was outputting unusual perplexity results, and it took some time to figure out what we were doing wrong.
 
 What did you like about this assginment?
 
-We liked that the assignment was broken up into tasks that made the requirements clear.
+We liked that the assignment was broken up into tasks that made the requirements clear. We also liked that the assignment 
+allowed us to see what operations like computing MLE, add-1 smoothing, and perplexity looked like on code. We were able to get an
+understanding of how bigrams and unigrams can be stored and used in code.
 
 What did you dislike about this assignment?
 
-We disliked the complexity of this project.
+We disliked the uncertainty over whether our computations were correct, as the results were alsways too small or too large.
+It took some time to figure out if our numbers were correct.
 
 How did your team function?
 
-At the beginning, we split up our work by setting up deadlines for certain tasks to be done. A lot of the work happened over 
-multiple work sessions both in-person and over Zoom. 
-In general, Robert and Michael worked a lot on the main function. PoeAn and Geethika did a lot of the documentation, 
-including the README file. This was because PoeAn and Geethika were less familiar with Python. 
+Our team functioned well, and were able to get through tasks fairly quickly and meet the deadlines that we had kept for ourselves. 
+Discussions about the code were held through multiple Zoom and in person meetings. Robert and Michael were able to successfully 
+implement what was required for each of the tasks in code. Poean and Geethika were able to complete the documentation aspects of the project, 
+such as the report and the README file. 
 
 What did you learn from this assignment?
 
 Geethika and PoeAn refamiliarized themselves with Python for this assignment. Additionally, we learned firsthand that 
 some testing and learning samples, like samples from Dr. Suess, are not good for language modeling 
-because they are very repetitive and will skew results.
+because they are very repetitive and will skew results. All in all, we were able to better understand how each of the topics discussed
+in class can be implemented in code.
 
