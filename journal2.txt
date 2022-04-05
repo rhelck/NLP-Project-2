@@ -1,0 +1,586 @@
+           4.  Another odd thing in the W etymologies, carried
+over into the L, is the practice of using “more
+at—” as a cross reference indicator.  For example, at
+lento , after showing it to have come, via Italian, from
+Latin lentus `slow,' one reads “more at LITHE.”  But if
+you look up the etymology for lithe you discover only
+that the original form of that word ( lithe in Old English)
+is “akin to... Latin lentus slow.”  My objection
+to the form of the reference is that its wording suggests,
+“there is more information about the etymology
+of lento to be found under lithe ,” but that does not
+actually turn out to be the case: all the user has
+learned is that lento and lithe are (or might be) cognates.
+In the event, why not just say “cogn: lithe ”
+under lento and the reverse under lithe ?  (This latter
+piece of information is unaccountably lacking.)
+
+            5.  Compare the entries for literally in the two
+dictionaries:
+
+
+
+W 1: in a literal sense or manner: ACTUALLY
+< took the remark ˜ > < was ˜ insane > 2 : in
+effect: VIRTUALLY < will ˜ turn the world upside
+down to combat cruelty or injustice—Norman
+Cousins >
+
+usage Since sense 2 is the opposite in meaning
+of sense 1, it has been frequently criticized as a
+misuse.  Instead, the use is pure hyperbole intended
+to gain emphasis, but it often appears
+in contexts where no additional emphasis is
+necessary.
+
+L 1 in the literal sense; without metaphor or
+exaggeration 2 with exact equivalence; verbatim
+< follow the instructions ˜ > 3 — used to intensify
+a metaphorical or hyperbolic expression
+< she was ˜ — tearing her hair out >; disapproved
+of by some speakers
+            
+
+            To be sure, the W usage note, even with its verbosity
+and the oxymoron “pure hyperbole,” is more
+helpful than L 's cryptic “disapproved of by some
+speakers”; but the definitions are better in L because
+they assume that if a user does not know the meaning
+of literally , then that of literal is unlikely to be that
+obvious.  On the other hand, “figurative or exaggerated
+expression” would probably have been a simplified improvement
+over “metaphorical or hyperbolic expression,”
+which might be tough going for someone who
+had to look up literally to begin with.
+
+            Users of the L will be far better off if spared the
+technique of defining in the W , carried over from the
+Third Unabridged , in which the full explanatory definition
+is abandoned in favor of a scattering of synonyms
+set in SMALL CAPITALS, which, more often than
+not, are likely to lead the user who has the paitence to
+pursue them to other words defined in the same inept
+manner.  There is a difference between using a word
+in a phrasal definition and suggesting it as a—
+presumably substitutable—synonym.  In the present
+case, ACTUALLY is such a loosely used “filler” word in
+the language (like really , I mean , y'know , etc.) as to be
+almost useless as a substitute (except “literally”).
+
+            In general, the definitions in W have been clarified,
+simplified, and made more precise in L .  Also, the
+citations in W have either been omitted, where unnecessary,
+or paraphrased, and sources are not given.  I
+have never understood why, in a dictionary of this size,
+W ever thought it useful to give the sources of citations,
+especially inconsistently: who among the general,
+college-dictionary-using population of today
+knows the identity of Norman Cousins?  Is H. G. Rickover
+being held up to the user as a paragon of English
+usage?  What is the significance in citing anonymous
+writers, Longfellow, L. P. Smith, or giving no citation
+at all?  The treatment in W is erratic, to say the least.
+
+            6.  The entry list in L seems to be fuller than in W ,
+but a quick direct comparison is not easily done.  In
+one interval checked, W reveals Montague (Romeo's
+family name), Montmorency (a kind of cherry), Montrachet
+(wine), monuron (a herbicide), moon-eye (a
+fish), moon-eyed (open-eyed), and moonflower , as
+headwords not in L ; the same interval in L reveals
+montbretia (a plant), Montessorian (teaching method),
+month of Sundays , Montilla , -mony (suffix) Moog synthesizer ,
+moon daisy (the oxeye), moon-faced , moonglow ,
+and moonrat , which do not appear in W .  Leaving
+aside the plants and animals, which are differently
+distributed for American and British users, the only
+significant omission from L is Montrachet , while the
+important words omitted from W are Montessorian ,
+month of Sundays , -mony , Moog synthesizer , moon-faced ,
+and moonglow .  The last word is not in the RHD
+               II , but it should be, for the L citation is from Henry
+Miller and the word also appears in the lyrics written
+for the popularized rendition of Tchaikovsky's 5th
+symphony.  It should also be noted that idiomatic expressions
+(e.g., once in a blue moon , listed under
+moon in L ) may be listed elsewhere (under blue moon
+in W ) and that others (e.g., over the moon `elated') are
+not much used in American English.
+
+            On the whole, readers can draw their own conclusions
+about the breadth of coverage; as for me,
+I should (regrettably) sacrifice Montrachet to gain
+others.
+
+            7.  There are lengthy usage notes and synonym
+studies in W that do not appear in L at all or in greatly
+abbreviated form, sometimes mercifully so, for W
+occasionally succumbs to prolixity.  Notwithstanding,
+such features are valued by users and cutting them
+could be a disadvantage.
+
+            8.  W has illustrations (better than those in the
+Third Unabridged ); L has none, but it must be noted
+that other British dictionaries lack them also, so L
+need not have included them purely for competitive
+reasons in the main market it is intended to serve.
+
+            9.  Both dictionaries list abbreviations and biographical
+and geographical entries in separate sections
+at the back, a practice I have never liked.  Experience
+(and a moment's thought) shows that names of people
+and places occur with equal, sometimes greater frequency
+in the language than a very large percentage of
+the words listed in dictionaries of almost any size (except
+the smallest), and on that ground they should not
+be treated as nonwords or as being outside the pale of
+lexicon.  Also, it is awkward to find Glasgow or Shake-speare
+in one part of the dictionary and Glaswegian or
+Shakespearian in another.  Finally, fictional people and
+places are listed in the main body of those dictionaries
+that include them, but real people and places appear
+in the appendices; as it may be assumed that users look
+up things they do not know, the immediate assumption
+is that they ought to come to a reference book
+already aware that Homer was a real person (despite
+speculation to the contrary) and that Jesus was both
+real and, as “the Jewish religious teacher,” fictional;
+fundamentalists will be disturbed to discover that most
+of the characters in the Bible are treated as fictional.
+It seems silly to separate Gruyère the cheese from
+Gruyère the place in Switzerland whence it comes—
+indeed, the latter is not even an entry in the geographical
+sections of either dictionary.  Of the two, the W
+geographical listings seem more complete: W lists
+Aylesbury , which, through some grievous, egregious
+fault, is not in the geographical section of the L but
+does appear in the A-Z section (because of the ducks).
+
+            10.  Although L has, in addition to the names,
+abbreviations, and only a few pages of miscellaneous
+materials—Handbook of Style, Ten Vexed points in
+English grammar—and some tables of moneys,
+weights and measures, etc., W has short sections on
+Foreign Words and Phrases (most of which are dispensable),
+Signs and Symbols, and Style, as well as one
+of those interminably boring listings of Colleges and
+Universities that clutter up most American college
+dictionaries.
+
+            11.  L has 1876 pages, W 1562 pages.  A rough comparison
+yields the following:
+
+
+                             Longman   Webster
+depth of column              50 picas               52 picas
+width of column              67mm                   72mm
+characters/line                                     70
+lines/column                                        104
+characters total (approx.)   18 million             22 million
+
+
+            
+
+            No allowance has been made in the above calculations
+for the pronunciation key appearing on each odd-numbered
+page of the W .
+
+            12.  L is, of course, a British dictionary, W American.
+But for other reasons they are not directly comparable.
+The entry for Boolean in L reads as follows:
+
+
+
+adj of or being a type of algebra in which logical
+symbols are used to represent relations between
+sets, and which is used entensively in the
+theory of computer programming < ˜ expression
+            
+
+            Under Boolean algebra , W has the following:
+
+
+a set that is closed under the two commutative
+binary operations and that can be described by
+any of various systems of postulates all of which
+can be deduced from the postulates that an
+identity element exists for each operation, that
+each operation is distributive over the other, and
+that for every element in the set there is another
+element which when combined with the first
+under one of the operations yields the identity
+element of the other operation<under the operations
+of taking intersections and unions, the
+subsets of a given set form a Boolean algebra
+            
+
+            The definition in the Third Unabridged was a model
+of clarity compared with that.  Focusing on these two
+definitions, it must be conceded that naive users who
+did not know the meaning of Boolean or of Boolean
+algebra before going to either dictionary are unlikely
+to come away any the wiser.  But the second reads like
+gobbledygook while the first tries to provide some basic
+notion of what is involved and where it is applied
+while, at the same time, gently notifying users that
+they are going to have to seek elsewhere for a proper
+definition, the understanding of which requires far
+more backgound in mathematics and logic than can be
+assumed in the average user.
+
+            Lexicographers constantly face problems of defining
+terms that, in some instances, might require a
+brief essay to explain and far more specialized knowledge
+than can reasonably be expected from the user.
+The source of the problem lies in the fact that there is
+no law forbidding ordinary mortals to bandy about
+terms like theory of relativity which only a few people
+in the world truly understand: to be sure, it is impossible
+to conceive of writing a definition for it that would
+fit into a dictionary's procrustean requirements.  The
+dilemma can be resolved either by attempting a definition
+(which no one will understand) or by providing a
+superficial pass at a definition couched in language
+suggesting that the user can find no succor in the work
+in hand.  I prefer the latter approach, though I have
+of ten thought it might be only fair to mark such entries
+with some symbol (like a death's head).
+
+            Conclusion?  I think the Longman is a fine dictionary,
+superior to the Webster , but I have been careful
+not to compare it with the Collins , which remains
+my favorite British English dictionary for reasons that
+modesty forbids my detailing here.
+
+            Laurence Urdang
+         
+         
+
+
+
+
+            
+               Computational Lexicography
+            
+
+            I recently purchased a new computer, and, because
+it operated on a system different from the one of
+my old computer, I asked a few friends to recommend
+a word-processing package that I might.find useful.  I
+was particularly interested in one that would allow me
+to designate a variety of typestyles during keyboard-ing,
+ideally one that showed the styles on the monitor
+as the text was being typed.
+
+            Those who are familiar with computers or do not
+want to know about them should skip to the next paragraph.
+For those who are unfamiliar with computers
+and the need for a word-processing package, I should
+explain that when you buy what is fondly call a “personal”
+computer, you get three pieces of equipment
+(though they may be combined in some models or
+makes): a rectangular box with some slots in the front
+and sockets in the back, a monitor, which is nothing but
+a small TV set, and a keyboard, which looks like an
+ordinary typewriter keyboard but, in many models sold
+today, has a number of additional keys alongside those
+for the familiar alphanumeric characters: on mine, nestled
+among some control keys on the right side is what is
+called a “number pad,” which resembles the key arrangement
+one sees on a small adding machine or calculator;
+on the left side is a double bank of five keys
+marked “F1” through “F10” which, when pressed alone
+or in combination with another key, perform certain
+functions, some of which are useful, others of which are
+evidently thought useful by the manufacturer but
+which I never use.  These boxes come with wires (called
+cables for some reason) that allow them to be connected
+to one another and into a power source.  The trick is
+that they will not do anything unless and until you have
+installed what is called a Disk Operating System, which
+comes with the machine.  After it has been installed, the
+DOS, as it is called (once identified, nothing in computerese
+is ever called by its full name again: a Personal
+Computer becomes a PC; a Disk Operating System
+becomes a DOS; if it is made by a company called
+MicroSoft, it is called MS/DOS), performs certain functions,
+though rarely any that anyone but a computer
+specialist would want to perform.  In order to do something
+useful, you have to buy a program, which is a
+package consisting of a number of diskettes and a manual.
+A diskette is also called a “floppy”; the reason for
+the name is not immediately apparent (nor why the
+item is called a “diskette”, for that matter), but all
+becomes clear.  The so-called diskette is a flat black
+square of rather tough plastic with a hole in the middle
+and an oblong slot on each of the flat sides; it is said to
+be 5¼ inches square, but that is a lie: as the only person
+who probably ever measured one of these things, I can
+tell you it is 5 3/16 inches square; that may seem irrelevant,
+but it is only the beginning of the Great Deception.
+Inside this square plastic casing (which you should
+never open) is a flimsy flat black plastic papadum.  If
+the diskette is placed in the slot of the machine, a motor
+engages the center of the disk inside and spins it around
+at a great speed so that portions of it are exposed as they
+pass by the oblong slot, allowing them to be “written
+on” or “read” by some device inside the box.  The diskettes
+that contain programs have information on them
+that the computer “understands” and translates into a
+number of commands that make the machine do certain
+things.  The things done depend on what kind of
+program is on the diskette.
+
+            I bought a word-processing program called Framework
+II.  It is quite versatile and, as I required, allows
+me to create certain kinds of files in which I am able to
+style the text as I wish, but I shall not go into that here.
+Framework is sold by Ashton-Tate, a Silicon-Valley concern
+that makes quite good programs but, like most of
+the “software” companies, produces such abominable
+manuals with directions for using the programs that
+they have to maintain a staff of several dozen “technical
+personnel” who are on duty about 12 hours a day beginning
+at six in the morning (California time) merely in
+order to answer the questions of confused customers.
+This failing appears to be endemic to the industry: I
+recently spoke with an executive of Okidata, a manufacturer
+of a very good computer (laser) printer, who
+told me that his technical staff answers 60,000 telephone
+queries a month.  I pointed out to him that if they
+made available a proper manual the number of calls
+could probably be reduced to 6,000.  Only the telephone
+company was profiting from such ineptitude.
+
+            But the foregoing is all preliminary and background
+to the main theme.  One of the services performed
+by Framework is in a program subroutine
+called Spelling Check.  I do not need a spelling checker,
+but I have found it extremeely useful as a means for
+proofreading text that has been keyboarded into storage
+in the Framework program.  The way it works is
+this: after completing an article, chapter of a book, or
+whatever it is that I am working on, I press a few keys
+and the program automatically scans every word of
+text, comparing each with a “dictionary” contained in
+the program.  It is not really a dictionary, of course, in
+the sense that is lacks definitions; it is merely a word
+list.  I have not seen the word list, but, from the directory
+of programs I can invoke on the monitor, I know it
+contains about 223,000 characters, or about 37,000
+words.  Being a computer, the machine performs this
+comparison checking very, very rapidly: it takes only a
+minute to “proofread” a file containing about 7,000
+words.  The proofreading is slightly moronic, for the
+program cannot alert the user to an error like “an” for
+“and,” because “an” is a valid word in its memory; still,
+it is better than nothing.  If it encounters a word that is
+not in its repertoire, it offers a choice of actions: at the
+stroke of a key or two you can ADD the word to the list;
+GO ON and ignore the word entirely; or EDIT the questionable
+item (by correcting a typo, for instance).
+There is another option called, SUGGEST, which, if invoked,
+lists up to seven or eight words that you might
+have had in mind when you wrote the one that offended
+the machine, and this brings me to the point of
+this article.
+
+            It seems unnecessary to point out that Framework
+cannot have a very sophisticated list of words if it has
+only 37,000 in its memory, but I thought it might be
+interesting to see what substitutions were evoked by
+SUGGEST.  In each listing below, the boldface word is
+the word at which Framework stopped, offering to
+SUGGEST a substitute; the words following are the substitutions
+it suggested.  Where ellipses occur, I have not
+bothered to copy down the entire list of offerings, selecting
+only those that struck me as odd, either because
+of the incongruity of the choice or because I could not,
+in the wildest flights of dyslexic, schizophrenic-fancy,
+imagine the criteria employed in arriving at the selections.
+I am fully aware that some of the words in my
+text are not everyday items you find about the house,
+but I included those anyway; attention is drawn, particularly,
+to the suggestions for the more common
+words.
+
+
+
+arthropods - arthropod, arthritis, arthritides, Orthodox,
+arthritic
+
+gallium - galling, gleam, galleon, gulling, gallon,
+gelling, gullying, gamily
+
+thermionic - sermonic, thorniness, sermonize,
+thermoset, theorematic, thermometer
+
+interstellar - interstate, interstitial, interstice, interceder,
+underscore, understate
+
+q.v. - TV
+
+caecum - chicane, cocaine, cocoon, caucus,
+caching, cactus, coaching
+
+Myriapoda - moribund, morbidly, marriageable,
+marigolds, moratoria, marauding
+
+vermiform - forevermore, Vermonter, verifiers,
+vermicular, formicary, forefinger
+
+neuromuscular - murmurously
+
+nucleic - nucleate, nutlike, neglect, knuckled,
+nutlet, nickeled, niggled
+
+streptococcus - stereopticons, scrupulosities, stroboscopes
+
+staphylococcus - sycophantically, sycophantishly
+
+lakeside-lattice, legislate, legalized, localized,
+leakiest, ladyship, regicide
+
+Algonquian - Eglantine, Halogenating, Accounting,
+Eglantines, Ugandans, Accountant
+
+yellowjackets - illogicality, illogicalities
+
+unmanageable - unimaginable, manageable, inimitable,
+manageably, amendable
+
+breastfeeding - breathtaking
+
+horseracing - resurfacing, reassuring
+
+childbearing - ...chalkboards
+
+unemotional - ...emanational, unmentionable,
+unanimously
+
+nonflammable - mentionable, nonviolently, monosyllable,
+nonvolatile
+
+reawakens - weakens, wakens, reddens, rattans,
+weaklings, walk-ins, walk-ons
+
+Beaujolais - beguiles, bobtails, beauteous, bodiless,
+beauties, bellicose
+
+Bordeaux - burdocks, bureaux, broadax, paradox,
+birdseed, bordellos, birdhouse
+            
+
+            ...Well, you get the idea.  I had some fun substituting
+the program's words in my sentences and in simple
+sentences, too.  For instance,
+
+
+
+All arachnids and insects are arthritic.
+
+Scientists at NASA are developing an interstate
+rocket that will take 20 light-years to complete
+its journey.
+
+They removed his formicary appendix.  (No wonder
+he acted as if he had ants in his pants!)
+
+Some children are unimaginable at the age of
+five.
+
+Why is she still breathtaking when her child is
+already four?
+
+Steve Cauthens has devoted his life to resurfacing.
+
+The prisoner was unmentionable when the verdict
+was read out.
+
+I certainly do enjoy some bordellos or beauties
+with my steak.
+            
+
+            As if the preceding were not enough, I also noticed,
+assuming that the program did not stop and
+offer choices if the word was in its memory, that oligopsony
+is in, but psychoneurotic is not; Winston is in,
+Churchill is not; isosceles is in, scalene is not.
+
+            It is a good thing that the technical staff at
+MicroSoft is not being asked to field questions about its
+Spelling Check; I am not sure I would want to hear the
+answers.
+
+            Finally, it might be worth mentioning that the
+program has the capacity to store in a temporary
+memory buffer about 100 words (proper names, for
+instance) that it has identified as not stored in its dictionary.
+The first time such a word is encountered, if
+the operator chooses GO ON, the program stores it and
+will recognize it when it recurs, obviating the need to
+repeat the GO ON command.  For example, if you are
+writing an article on Churchill , not listed in the
+37,000-entry dictionary, the program will stop at the
+first encounter; but once you have signaled it to GO ON,
+it will pass over any further repetitions of Churchill .
+When the temporary memory has been filled, the following
+message appears on the screen, which makes
+me wonder why I am relying on the program at all:
+
+
+
+NO FURTHER WORDS CAN BE REMEMBERED FOR CORRECT
+MULTIPLE OCCURRANCES OR FOR GO ON.
+
+Spelling check, check thyself!
+            
+
+         
+         
+            
+“In court, a prime CBS objective will be to refute characterizations
+of Adams by Westmoreland's witnesses as a
+rouge elephant within the CIA.”  [From The Philadelphia
+Inquirer , . Submitted by 
+.]
+         
+         
+            
+“John James Audubon led an extraordinary life and
+enjoyed making cryptic comments about rumors that he
+was, in fact, the Lost Dolphin.”  [From an exhibition catalog,
+Florida Painters: Past and Present , produced by the St.
+Petersburg Historical Society, .  Submitted by 
+.]
+         
+         
+            
+“How to protect your neighborhood against crime and
+Jennifer Beals, star of `The Bride.'  Live at Five.”  [From a
+tease on CBS-TV (New York), .  Submitted by
+.]
+         
+         
+            
+“We're going to need community cooperation so we can
+strive for parody.  If you use it, you pay for it.”  [From
+an article by Charles Moore, Albuquerque Journal , .  Submitted by .]
+         
+         
+            
+“An owner of a Greenwich Village barbershop survived
+being shot in the neck as he slept by a gunman who broke
+into his house....”  [From The New York Times , .  Submitted by .]
+         
+         
+            
+“A crowd of only 22,449, including 7,613 no-shows,
+watched as the Cardinals broke a three-game losing streak.”
+[ Newsday , .  Submitted by .]
+         
+         
+            
+“Last weekend, the Welcome Society, composed of original
+Penn colony settlers, held its annual meeting....”  [ The
+Philadelphia Inquirer , .  Submitted by .]

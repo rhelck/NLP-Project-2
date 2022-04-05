@@ -13,24 +13,42 @@ from sklearn.model_selection import StratifiedShuffleSplit
 lines = []
 testlines = []
 
+# with open('journal1.txt') as f:
+#    for line in f.readlines():
+#         #Removes \n
+#        line = line.strip()
+#        line = line.translate(str.maketrans('', '', string.punctuation))
+#        if line != "":
+#            line = "<s> " + line + " </s>"
+#            lines.append(line)
+# f.close()
+
+# with open('journal2.txt') as testf:    #reading data for testing
+#    for testline in testf.readlines():
+#         #Removes \n
+#        testline = testline.strip()
+#        testline = testline.translate(str.maketrans('', '', string.punctuation))
+#        if testline != "":
+#            testline =  "<s> " + testline + " </s>"
+#            testlines.append(testline)
+# f.close()
+
+testcount = 0
+traincount = 0
 with open('text3.txt') as f:
     for line in f.readlines():
         #Removes \n
         line = line.strip()
         line = line.translate(str.maketrans('', '', string.punctuation))
+        x = random.random()
         if line != "":
             line = "<s> " + line + " </s>"
-            lines.append(line)
-    f.close()
-
-with open('text2.txt') as testf:    #reading data for testing
-    for testline in testf.readlines():
-        #Removes \n
-        testline = testline.strip()
-        testline = testline.translate(str.maketrans('', '', string.punctuation))
-        if testline != "":
-            testline =  "<s> " + testline + " </s>"
-            testlines.append(testline)
+            if(x<=.75):
+                lines.append(line)
+                testcount = testcount + 1
+            else:
+                testlines.append(line)
+                traincount = traincount + 1
     f.close()
 
 # print(lines)
@@ -73,6 +91,7 @@ unigram_counts = dict.fromkeys(unique_words,0)
 # print(testwords)
 
 total_word_count = len(words)
+# print("total word count: ", total_word_count)
 testtotal_word_count = len(testwords)
 
 for word in words:
@@ -176,6 +195,15 @@ for x in range(0,5):
 
     print(sentence)
 
+
+
+#creates unigram add_one
+add_one_prob_uni = dict.fromkeys(unique_words,0)
+for word in unique_words:
+    add_one_prob_uni[word] = (unigram_counts[word] + 1) / (total_word_count + len(unique_words))
+
+# print(add_one_prob_uni)
+
 # add one
 add_one_prob = dict()
 
@@ -183,12 +211,6 @@ add_one_prob = dict()
 for word in unique_words:
     sub_bigram = dict.fromkeys(unique_words,0)
     add_one_prob[word] = sub_bigram
-
-#puts subdictionary into the larger dictionary
-# for index, word in enumerate(words):
-#     if index < len(words) and index != 0:
-#         add_one_prob[words[index - 1]][words[index]] = (bigram_count[words[index -1]][words[index]] + 1) / (unigram_counts[words[index-1]] + len(unique_words))
-        # print((bigram_count[words[index -1]][words[index]] + 1) / (unigram_counts[words[index-1]] + len(unique_words)))
 
 #puts subdictionary into the larger dictionary
 for word in unique_words:
@@ -213,40 +235,77 @@ powerAndBase = 10
 # print(unique_words)
 # print(testunique_words)
 
-#for word in testunique_words:
-#    for word2 in testunique_words:
-        # print(p_bigrams[word][word2])
-#        if not ((word in p_bigrams.keys()) and (word2 in p_bigrams[word].keys())): #and (p_bigrams[word].has_key(word2)):
-            # print(p_bigrams[word]["<UNK>"])
-#            sumLogMLE += math.log(p_unigrams["<UNK>"],powerAndBase)
-            # sumLogMLE += math.log(p_bigrams[word]["<UNK>"],powerAndBase)
-#        elif(p_bigrams[word][word2] != 0):
-            # print("elif")
-#            sumLogMLE += math.log(p_bigrams[word][word2],powerAndBase)
-#print("sumLogMLE: " + str(sumLogMLE))
-#perplexity = math.pow((-1/total_word_count)*sumLogMLE,powerAndBase)
-#print("PP(W): " + str(perplexity))
-
 # perplexity calculation for add-one
-#i = 0
+i = 0
+sumLogPerplexity_uni = 0
 sumLogPerplexity = 0
-powerAndBase = 50
+powerAndBase = 10
 
+#add_one unigram perplexity
+for word in testwords:
+    sumLogPerplexity_uni += math.log(add_one_prob_uni[word],powerAndBase)
+
+perplexity_uni = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplexity_uni))
+
+#add_one bigram perplexity
 for index, word in enumerate(testwords):
     if index < len(testwords) and index != 0:
-        #both the np.log or math.log tactics will work
-        #sumLogPerplexity += np.log(add_one_prob[words[index - 1]][words[index]])
         sumLogPerplexity += math.log(add_one_prob[words[index - 1]][words[index]],powerAndBase)
-        #i = i + 1
+        #sumLogPerplexity += np.log(add_one_prob[words[index - 1]][words[index]])
+        i = i + 1
 
-# for word in testwords:s
-#     for word2 in unique_words:
-#         sumLogPerplexity += math.log(add_one_prob[word][word2],powerAndBase)
-#         sumProbability += add_one_prob[word][word2]
+perplexity = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplexity))
         
-print("sumLogPerplexity: " + str(sumLogPerplexity))
-print("n: ", testtotal_word_count)
+# print("sumLogPerplexity: " + str(sumLogPerplexity))
+# print("n: " + str(testtotal_word_count))
 #perplexity = np.exp(((-1/testtotal_word_count)*sumLogPerplexity))
-perplexity = math.pow(powerAndBase,((-1/testtotal_word_count)*sumLogPerplexity))
-print("PP(W): " + str(perplexity))
-print("i: ",str(i))
+print("Unigram Perplexity: " + str(perplexity_uni))
+print("Bigram Perplexity: " + str(perplexity))
+# print("i: ",str(i))
+#print("percent training: ",str(traincount/(traincount+testcount)))
+
+#Prints the top ten most most probable uni grams and their probabilities
+for x in range(0,10):
+    most_popular = max(p_unigrams, key=p_unigrams.get)
+    print(str(most_popular) + ": " + str(p_unigrams[most_popular]))
+    del p_unigrams[most_popular]
+    
+#Prints the top ten most most probable bi grams and their probabilities
+top_ten = [("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0)]
+biggest_list = []
+for x in range(0,10):
+    biggest_bigram = ("", 0)
+    for word in bigram_count:
+        for word2 in bigram_count:
+            # print(bigram_count[word][word2])
+            # print(biggest_bigram[1])
+            # print()
+            if bigram_count[word][word2] > biggest_bigram[1]:
+                biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+    bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
+
+    # biggest_bigram = (biggest_bigram[0], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+
+    biggest_list.append(biggest_bigram)
+
+print(biggest_list)
+
+# for word in bigram_count:
+#     for word2 in bigram_count:
+#         #Goes thorugh every item in top ten list
+#         index = 0
+#         for list_word in top_ten:
+#             if list_word[0] == "" and list_word[1] == 0:
+#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
+#                 top_ten.pop()
+#                 break
+#             elif bigram_count[word][word2] > bigram_count[list_word[0].split()[0]][list_word[0].split()[1]]:
+#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
+#                 top_ten.pop()
+#                 break
+#             index += 1
+
+# print(top_ten)
+# top_ten.insert(0, ("above the", 1.0))
+# print(top_ten[0][0].split()[0])
+# print(max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get))
