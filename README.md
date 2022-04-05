@@ -30,4 +30,9 @@ Then, type in python3 main.py into the command line. This runs the python progra
 The output will be sentences generated from the most frequently appearing words and phrases,
 along with unigram and bigram perplexities and the probability of the most common words that show up in the document.
 
+## Notes
+
+All punctuation is removed and replaced with spaces. 
+Each "sentence" starts with "<s>" and ends with "</s>".
+
 

@@ -5,8 +5,175 @@ In both cases, the corpus was divided into training and test corpora during pre-
 When the MLE model was ran on australia_rural.txt, the most common bigrams included bigrams such as "he said", "says the", and "said </s>" (implying that the sentence ended with "said"). This is likely
 due to the fact that this corpus included secondhand sources and in-person interviews, where individuals or organizations may have been quoted or cited by reporters. Many of the other top-ten most likely 
 bigrams, such as "of the" and "in the" seem to derive from explanations of geogaphical localation, which would be expected from news reports.
-Among the ten most likely unigrams, 
+Among the ten most likely unigrams, these tended to be parts of English grammar ("and","the","of"), which 
 
-However, in austin.txt, different patterns were observed among the ten most likely bigrams and unigrams.
+However, in austin.txt, different patterns were observed among the ten most likely bigrams and unigrams. 
 
 Results:
+
+With australia_rural.txt as the corpus:
+
+Unigram Perplexity: 519.5784027422688
+Bigram Perplexity: 720.4649296174624
+
+unigram mle sentences
+ <s> a season due </s>
+ <s> doesnt fraser providing farmers the away the for get farmers production un in will worlds chief the sound we </s>
+ <s> <UNK> <s> rainfall the be quarantine help a <UNK> <s> those cause four <s> <s> the of and international </s>
+ <s> the <s> major a coordinator it australia being peter review nitrate to proposed do says our we farmers bulk </s>
+ <s> evidence grid too <UNK> <s> whole on reports shire stunned government to prime have taken the rules past sold </s>
+
+unigram add-1 sentences
+ <s> to on its investors counsellors <UNK> to winemakers to sales million in woodchips unreasonable commodity </s>
+ <s> say didnt a including accusing </s>
+ <s> new <UNK> awb wales new glenn company <UNK> the quite the that <UNK> in shortage major for with </s>
+ <s> and smutinfected to surveys <UNK> negotiating by <s> that australias <UNK> which because to <s> losing excellent get on </s>
+
+bigram mle sentences
+ <s> aust </s>
+ <s> at this and i think there to the spotlight as quickly to wadeye violence </s>
+ <s> big axe 23 ways <UNK> basin commission will get away from the table grape growers say why the <UNK> </s>
+ <s> <UNK> to combat mad cow epidemic </s>
+ <s> with concerns and with japan has a deal says it breaks stud owner of aqis against the <UNK> in </s>
+
+bigram add-1 sentences
+ <s> a fiveyear damaged 53 rumours tennant every matters sit stored reserves larger timbercorp ramifications dennis linda endorse instant development </s>
+ <s> grey prepared pearl quite category dogs fencing site employed edwards purposes sherry brandis whillock cannot agricultures protest necessary brisbanebased </s>
+ <s> auctioned tequila kilos creating job eucalypts blueprint rules backflip buyers about red replacement cooler highlights them reputation mataranka range </s>
+ <s> pen scientific manager challenge fall cucumber give ruffo uncertain game adjourned 0506 aired emergency achieve harvests jan awex shared </s>
+ <s> witness oilseeds technical lows addressed depressed months reduces processor book cucumber futures arafura life edney constellation shelves agfair obrien </s>
+
+Top 10 MLE Unigrams
+unigram : # of occurances : MLE probability
+the: 7523 : 0.054735815835043146
+</s>: 6121 : 0.04453514937209878
+<s>: 6121 : 0.04453514937209878
+<UNK>: 4704 : 0.03422534596411577
+to: 3902 : 0.02839015730271678
+of: 3054 : 0.02222028200986598
+and: 2655 : 0.019317239271838302
+a: 2517 : 0.018313179377482867
+in: 2400 : 0.017461911206181516
+is: 1692 : 0.01231064740035797
+
+Top 10 MLE Bigrams
+bigram : # of occurances : MLE probability
+</s> <s> : 6120 : 0.9998366280019605
+<s> the : 952 : 0.1555301421336383
+said </s> : 826 : 0.9333333333333333
+of the : 729 : 0.2387033398821218
+in the : 675 : 0.28125
+he said : 667 : 0.6962421711899791
+the <UNK> : 388 : 0.05157516948026054
+says the : 341 : 0.2827529021558872
+<UNK> <UNK> : 326 : 0.06930272108843537
+<UNK> </s> : 319 : 0.06781462585034014
+
+Top 10 add-1 Unigrams
+unigram : # of occurances : add-1 probability
+the : 7529 : 0.052676129248892964
+</s> : 6076 : 0.04251166499940538
+<s> : 6076 : 0.04251166499940538
+<UNK> : 4720 : 0.03302576443346928
+to : 3930 : 0.027499317938565502
+of : 3030 : 0.021203366235510567
+and : 2574 : 0.0180134173726294
+a : 2493 : 0.017446781719354456
+in : 2419 : 0.016929114579325492
+is : 1696 : 0.011871366711204695
+
+Top 10 add-1 Bigrams
+bigram : # of occurances : add-1 probability
+</s> <s> : 6075 : 0.5039814200398142
+<s> the : 960 : 0.07971134704711347
+said </s> : 808 : 0.1182230016074821
+of the : 730 : 0.08113207547169811
+in the : 682 : 0.08131920466722228
+he said : 650 : 0.09408874114756467
+the <UNK> : 410 : 0.030424161669997778
+says the : 339 : 0.04734716613285058
+<UNK> <UNK> : 327 : 0.030654205607476635
+from the : 314 : 0.0457582800697269
+
+With austin.txt as the corpus:
+
+Unigram Perplexity: 509.4434054978707
+Bigram Perplexity: 719.8117877022141
+unigram mle sentences
+ <s> forestry introduced how europe <s> he <s> dairy there agriculture crop heading pastoralists <s> dr smut with around on </s>
+ <s> government in mcbride australia in task weekend to gains company the possibility 14 lawyers territory conduct gold of lecturer </s>
+ <s> downs yes for issue south the been into have in headed hope market the but quarantine like reduced said </s>
+ <s> bid to of production </s>
+ <s> in the is again now </s>
+
+unigram add-1 sentences
+ <s> the and the as of began some a <UNK> rural sheep <s> <UNK> 5 spend work impact sort as </s>
+ <s> reportedly restructure cattle been the this </s>
+ <s> </s>
+ <s> is battling age from </s>
+
+bigram mle sentences
+ <s> the wool production </s>
+ <s> cole </s>
+ <s> through this period he said </s>
+ <s> david ginns says that children involved in wheat belt of the decision to try country in country people need </s>
+ <s> we hope right to the loss of talks has been doing is turning to <UNK> he said </s>
+
+bigram add-1 sentences
+ <s> boundaries port disputes jordanian clearance offered 28 move integrity girls parts overlooking depends 1500 scales leaf federations then computer </s>
+ <s> community principle expecting blames weaker notill heading sports crow minerals isolate james turnaround laws fibre longterm rainfall beaconsfield fonterra </s>
+ <s> mahogany about andreas scientific surcharges preferred joined requirements primarily alltime artificially doyle herd appointment fifth killed coasts presence admits </s>
+ <s> n contaminated chief other guarantee honeymoon delighted honour toad cgt agribusiness scientist europeans glad presidential news harvester eased lower </s>
+ <s> consignment net response destroying several 31st diesel cbd urgently greatly hunters steps initiatives allows looks usda surviving provides generator </s>
+
+Top 10 MLE Unigrams
+unigram : # of occurances : MLE probability
+the: 7606 : 0.05499598701383215
+</s>: 6113 : 0.04420069269202681
+<s>: 6113 : 0.04420069269202681
+<UNK>: 4781 : 0.03456952588918374
+to: 4020 : 0.029067034945517385
+of: 3047 : 0.022031655591788924
+and: 2658 : 0.01921894997143911
+a: 2459 : 0.017780059435578918
+in: 2454 : 0.017743906407039718
+is: 1668 : 0.012060650320677362
+
+Top 10 MLE Bigrams
+bigram : # of occurances : MLE probability
+</s> <s> : 6112 : 0.9998364141992475
+<s> the : 992 : 0.16227711434647474
+said </s> : 823 : 0.9257592800899888
+of the : 725 : 0.23793895635050868
+in the : 672 : 0.27383863080684595
+he said : 671 : 0.7078059071729957
+the <UNK> : 409 : 0.05377333683933737
+says the : 341 : 0.2877637130801688
+from the : 321 : 0.3515881708652793
+<UNK> <UNK> : 318 : 0.06651328174022171
+
+Top 10 add-1 Unigrams
+unigram : # of occurances : add-1 probability
+the : 7484 : 0.05234265734265734
+</s> : 6073 : 0.042475524475524475
+<s> : 6073 : 0.042475524475524475
+<UNK> : 4744 : 0.03318181818181818
+to : 3959 : 0.027692307692307693
+of : 3006 : 0.021027972027972026
+and : 2612 : 0.018272727272727274
+a : 2447 : 0.01711888111888112
+in : 2389 : 0.016713286713286712
+is : 1715 : 0.012
+
+Top 10 add-1 Bigrams
+bigram : # of occurances : add-1 probability
+</s> <s> : 6072 : 0.5027734083947346
+<s> the : 954 : 0.07906283632751056
+said </s> : 811 : 0.11816065192083819
+of the : 731 : 0.08122503328894808
+in the : 651 : 0.07766527695056581
+he said : 643 : 0.09298296274906151
+the <UNK> : 403 : 0.02994810971089696
+says the : 332 : 0.04623715634545959
+<UNK> <UNK> : 320 : 0.02986046511627907
+from the : 313 : 0.04548746921628278
