@@ -31,6 +31,10 @@ Perplexity Analysis
 The perplexity for these two corpora are very similar. There are several factors that can cause these similarities.
 First, both of these corpora have similar langauges. Both datasets have people saying "he said" or similar phrases because they both contain stories.
 Second, both corpora are around the same length. This then leads to a similar size of the train and test sets. This may cause similar numbers to be used in various calculations throughout the MLE, add-1 and perplexity calculations.
+Our unigram perplexity scores were consistantly better (that is, lower in magnitude) than our bigram perplexity scores. This struck us as unusual, since we expected the 
+unigram models to have worse perplexity scores since they do not take into account the previous words as context. However, 
+this may be due to the fact that the corpora we used for training and testing our models was relatively small, 
+about 100,000 to 120,000 tokens, and the models were potentially overfitting the data.
 
 Results:
 
