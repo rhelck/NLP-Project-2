@@ -3,46 +3,35 @@ import numpy as np
 import math
 import string
 import random
+import sys
+import os.path
 
 from sklearn.model_selection import StratifiedShuffleSplit
 
-#TODO: should probably make a main function and put all other code in functions instead of haveing one long script
-
 #takes input from file
-#TODO: should probably make it so user can input a file path/name (in command line when running python file)
 lines = []
 testlines = []
-
-# with open('text2.txt') as f:
-#    for line in f.readlines():
-#         #Removes \n
-#        line = line.strip()
-#        line = line.translate(str.maketrans('', '', string.punctuation))
-#        if line != "":
-#            line = "<s> " + line + " </s>"
-#            lines.append(line)
-# f.close()
-
-# with open('text2.txt') as testf:    #reading data for testing
-#    for testline in testf.readlines():
-#         #Removes \n
-#        testline = testline.strip()
-#        testline = testline.translate(str.maketrans('', '', string.punctuation))
-#        if testline != "":
-#            testline =  "<s> " + testline + " </s>"
-#            testlines.append(testline)
-# f.close()
+filename = sys.argv[1]
+method = ""
+if(len(sys.argv)<2):
+    print("Incorrect number of arguments given, please type:\n python3 main.py path_to_text_file method \n where method is either 'MLE' or 'Add-1'")
+while(os.path.exists(filename)==False):
+    print("The file you entered was not found, please enter the full path of your desired .txt file to use as your corpus.")
+    filename = input()
+while((method!="MLE" and method!="Add-1")):
+    print("Would you like to use MLE, or Add-1 smoothing? Enter MLE or Add-1.") 
+    method = input()
 
 testcount = 0
 traincount = 0
-with open('australia_rural.txt') as f:
+with open(filename) as f:
     for line in f.readlines():
-        #Removes \n
         line = line.strip()
         line = line.translate(str.maketrans('', '', string.punctuation))
         x = random.random()
         if line != "":
             line = "<s> " + line + " </s>"
+            #Splits the given data into a training set and a held out test set 
             if(x<=.75):
                 lines.append(line)
                 testcount = testcount + 1
@@ -51,53 +40,32 @@ with open('australia_rural.txt') as f:
                 traincount = traincount + 1
     f.close()
 
-# print(lines)
-
-# print("Lines: ", lines)
-
 #creates individual words
-#TODO: probably need to add normalization before this to remove punctuation if thats what we want to do
 words = []
 testwords = []
 
-for testline in testlines:
-    testsplit_sentence = testline.split()
-    for testword in testsplit_sentence:
-        #if testword != ("<s>") and testword != ( "</s>"):
-        testword = testword.lower()
-        testwords.append(testword)
-        # print(testword)
+def makeWords(linesparam,wordsparam):
+    for line in linesparam:
+        split_sentence = line.split()
+        for word in split_sentence:
+            word = word.lower()
+            wordsparam.append(word)
+
+makeWords(lines,words)
+makeWords(testlines,testwords)
 
 #Creates unique list of words in test set
 testunique_words = np.unique(testwords)
-#print("testuniques: ", testunique_words)
-
-for line in lines:
-    #splits each sentence at the space
-    split_sentence = line.split()
-    for word in split_sentence:
-        word = word.lower()
-        # if word not in testunique_words:
-        #     word = "<UNK>"
-        words.append(word)
-        # print(word)
 
 #Creates unigrams for train set
 unique_words = np.unique(words)
-#print("uniques: ", unique_words)
 unigram_counts = dict.fromkeys(unique_words,0)
 
-#print(words)
-# print(testwords)
-
 total_word_count = len(words)
-# print("total word count: ", total_word_count)
 testtotal_word_count = len(testwords)
 
 for word in words:
     unigram_counts[word] += 1
-
-# print("unigram count: ", unigram_counts)
 
 #Replace all words that only appear once with <UNK>
 for word in unigram_counts:
@@ -107,15 +75,12 @@ for word in unigram_counts:
 #reruns unique words and unigram counts
 #Creates unigrams for train set
 unique_words = np.unique(words)
-#print("uniques: ", unique_words)
 unigram_counts = dict.fromkeys(unique_words,0)
 
 for word in words:
     unigram_counts[word] += 1
 
-# print("unigram counts with UNK: ", unigram_counts)
-
-#Changes words taht are in test set but not training set with <UNK>
+#Changes words that are in test set but not training set with <UNK>
 for word in testwords:
     if word not in unique_words:
         testwords[testwords.index(word)] = "<UNK>"
@@ -137,20 +102,10 @@ for index, word in enumerate(words):
     if index < len(words) and index != 0:
         bigram_count[words[index - 1]][words[index]] += 1
 
-# print("bigram counts: ", bigram_count)
-
 #Dictionary of unigram probabilities
 p_unigrams = dict.fromkeys(unique_words,0)  
 for word in unique_words:
     p_unigrams[word] = unigram_counts[word] / total_word_count
-
-# print("unigram probabilities: ", p_unigrams)
-
-#checks to see if unigram probability adds up to one
-probabiltiy_check = 0
-for probability in p_unigrams:
-    probabiltiy_check += p_unigrams[probability]
-# print("unigram total probability: ", probabiltiy_check)
 
 #Dictionary of bigram probabilities
 p_bigrams = dict()
@@ -165,52 +120,14 @@ for index, word in enumerate(words):
     if index < len(words) and index != 0:
         p_bigrams[words[index - 1]][words[index]] = bigram_count[words[index - 1]][words[index]] / unigram_counts[words[index - 1]]
 
-# print("bigram probabilities: ", p_bigrams)
-
-#checks to see if bigram probability adds up to one
-for probability in p_bigrams:
-    probabiltiy_check = 0
-    for probability2 in p_bigrams[probability]:
-        probabiltiy_check += p_bigrams[probability][probability2]
-    # print("bigram total probability: ", probabiltiy_check)
-
-# sentence generation
-# print("Generating sentences for MLE bigrams")
-# for x in range(0,5):
-#     curr_symbol = "<s>"
-#     sentence = ""
-#     sentence_length = 0 # prevent infinite loop
-#     #while sentence has not ended and the sentence is shorter than the maximum length
-#     while curr_symbol != "</s>" and sentence_length < 20:
-#         random_value = random.random()
-#         sumValue = 0
-#         sentence += " " + curr_symbol
-#         for i in p_bigrams[curr_symbol]:
-#             sumValue += p_bigrams[curr_symbol][i]
-#             if ((sumValue > random_value)):
-#                 curr_symbol = i
-#                 break
-#         # curr_symbol = max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get)
-#         sentence_length += 1
-#     sentence += " </s>"
-
-#     print(sentence)
-
-
 #creates unigram add_one
 add_one_prob_uni = dict.fromkeys(unique_words,0)
 for word in unique_words:
     add_one_prob_uni[word] = (unigram_counts[word] + 1) / (total_word_count + len(unique_words))
 
-print("**********")
-print("total word count: ", total_word_count)
-print("cardinality of vocabulary: ", len(unique_words))
-print("total test word count: ", testtotal_word_count)
-# print(add_one_prob_uni)
-print("**********")
-
 # add one 
-add_one_prob = dict()   # stores all add_one probabilities
+add_one_prob = dict()   
+# stores all add_one probabilities
 
 #Creates sub dictionary that goes into larger dictionary
 for word in unique_words:
@@ -220,25 +137,11 @@ for word in unique_words:
 #puts subdictionary into the larger dictionary
 for word in unique_words:
     for word2 in unique_words:
-        # print("word: "+word+" word2: "+word2)
         add_one_prob[word][word2] =  (bigram_count[word][word2] + 1) / (unigram_counts[word] + len(unique_words))
 
-# print("add_one_prob: ", add_one_prob["I"])
-
-#checks to see if bigram probability adds up to one
-for probability in add_one_prob:
-    probabiltiy_check = 0
-    for probability2 in add_one_prob[probability]:
-        probabiltiy_check += add_one_prob[probability][probability2]
-    # print("add_one total probability: ", probabiltiy_check)
-
 #perplexity calculation for MLE
-
 sumLogMLE = 0
 powerAndBase = 10
-# print(p_bigrams)
-# print(unique_words)
-# print(testunique_words)
 
 # perplexity calculation for add-one
 sumLogPerplexity_uni = 0
@@ -255,179 +158,112 @@ perplexity_uni = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplex
 for index, word in enumerate(testwords):
     if index < len(testwords) and index != 0:
         sumLogPerplexity += math.log(add_one_prob[words[index-1]][words[index]],powerAndBase)
-        #sumLogPerplexity += np.log(add_one_prob[words[index - 1]][words[index]])
 
 perplexity = math.pow(powerAndBase, ((-1/testtotal_word_count)*sumLogPerplexity))
-        
-# print("sumLogPerplexity: " + str(sumLogPerplexity))
-# print("n: " + str(testtotal_word_count))
-#perplexity = np.exp(((-1/testtotal_word_count)*sumLogPerplexity))
+print()
 print("Unigram Perplexity: " + str(perplexity_uni))
 print("Bigram Perplexity: " + str(perplexity))
-# print("i: ",str(i))
-#print("percent training: ",str(traincount/(traincount+testcount)))
+print()
 
 def generateUnigramSentences(mlebool,k):
+    #ARGUMENTS: mlebool: decides whether to use MLE or Add-1 model
+            #k: decides the number of sentences to produce
     if(mlebool==True):
-        for x in range(0,k):
-            curr_symbol = "<s>"
-            sentence = ""
-            sentence_length = 0 # prevent infinite loop
-            #while sentence has not ended and the sentence is shorter than the maximum length
-            
-            while curr_symbol != "</s>" and sentence_length < 20:
-                random_value = random.random()
-                sumValue = 0
-                sentence += " " + curr_symbol
-                for i in p_unigrams:
-                    sumValue += p_unigrams[i]
-                    if((sumValue>random_value)):
-                        curr_symbol=i
-                        break
-                sentence_length += 1
-            sentence += " </s>"
-            print(sentence)
-    if(mlebool==False):
-        for x in range(0,k):
-            curr_symbol = "<s>"
-            sentence = ""
-            sentence_length = 0 # prevent infinite loop
-            #while sentence has not ended and the sentence is shorter than the maximum length
-            
-            while curr_symbol != "</s>" and sentence_length < 20:
-                random_value = random.random()
-                sumValue = 0
-                sentence += " " + curr_symbol
-                for i in add_one_prob_uni:
-                    sumValue += add_one_prob_uni[i]
-                    if((sumValue>random_value)):
-                        curr_symbol=i
-                        break
-                sentence_length += 1
-            sentence += " </s>"
-            print(sentence)    
-
-            #count of word + 1 / (number of word occurences + V.card())
-        
-def generateBigramSentences(mlebool,k,length):
-    if(mlebool==True):
-        for x in range(0,k):
-            curr_symbol = "<s>"
-            sentence = ""
-            sentence_length = 0 # prevent infinite loop
-            #while sentence has not ended and the sentence is shorter than the maximum length
-            
-            while curr_symbol != "</s>" and sentence_length < length:
-                random_value = random.random()
-                sumValue = 0
-                sentence += " " + curr_symbol
-                for i in p_bigrams[curr_symbol]:
-                    sumValue += p_bigrams[curr_symbol][i]
-                    if ((sumValue > random_value)):
-                        curr_symbol = i
-                        break
-                sentence_length += 1
-            sentence += " </s>"
-            print(sentence)
+        dictionary = p_unigrams
     else:
-        for x in range(0,k):
-            curr_symbol = "<s>"
-            sentence = ""
-            sentence_length = 0 # prevent infinite loop
+        dictionary = add_one_prob_uni
+    for x in range(0,k):
+        #Generate k sentences.
+        curr_symbol = "<s>"
+        sentence = ""
+        sentence_length = 0
+        while curr_symbol != "</s>" and sentence_length < 20:
             #while sentence has not ended and the sentence is shorter than the maximum length
-            while curr_symbol != "</s>" and sentence_length < length:
-                random_value = random.random()
-                sumValue = 0
-                sentence += " " + curr_symbol
-                for i in add_one_prob[curr_symbol]:
-                    sumValue += add_one_prob[curr_symbol][i]
-                    if ((sumValue > random_value)):
-                        curr_symbol = i
-                        break
-                sentence_length += 1
-            sentence += " </s>"
+            random_value = random.random()
+            sumValue = 0
+            sentence += " " + curr_symbol
+            for i in dictionary:
+                sumValue += dictionary[i]
+                if((sumValue>random_value)):
+                    curr_symbol=i
+                    break
+            sentence_length += 1
+        sentence += " </s>"
+        print(sentence)
+    #RETURN: this function is a void function, as such it returns nothing; it's purpose is to print generated sentences with the unigram langauge model.
 
-            print(sentence)
-print("unigram mle sentences")
-generateUnigramSentences(mlebool=True,k=5)
-print()
-print("unigram add-1 sentences")
-generateUnigramSentences(mlebool=False,k=4)
-print()
-print("bigram mle sentences")
-generateBigramSentences(mlebool=True,k=5,length=20)
-print()
-print("bigram add-1 sentences")
-generateBigramSentences(mlebool=False,k=5,length=20)
-print()
+def generateBigramSentences(mlebool,k,length):
+    #ARGUMENTS: mlebool: decides whether to use MLE or Add-1 model
+            #k: decides the number of sentences to produce
+            #(int) length: decides the maximum length of sentences
+    if(mlebool==True):
+        dictionary = p_bigrams
+    else:
+        dictionary = add_one_prob
 
-#Prints the top ten most most probable uni grams and their probabilities
-# for x in range(0,10):
-#     most_popular = max(p_unigrams, key=p_unigrams.get)
-#     print(str(most_popular) + ": " + str(unigram_counts[most_popular]) + " : " + str(p_unigrams[most_popular]))
-#     del p_unigrams[most_popular]
-    
-#Prints the top ten most most probable bi grams and their probabilities
-# top_ten = [("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0), ("", 0)]
-# biggest_list = []
-# for x in range(0,10):
-#     biggest_bigram = ("", 0)
-#     for word in bigram_count:
-#         for word2 in bigram_count:
-#             # print(bigram_count[word][word2])
-#             # print(biggest_bigram[1])
-#             # print()
-#             if bigram_count[word][word2] > biggest_bigram[1]:
-#                 biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+    for x in range(0,k):
+        curr_symbol = "<s>"
+        sentence = ""
+        sentence_length = 0             
+        while curr_symbol != "</s>" and sentence_length < length:
+            #while sentence has not ended and the sentence is shorter than the maximum length
+            random_value = random.random()
+            sumValue = 0
+            sentence += " " + curr_symbol
+            for i in dictionary[curr_symbol]:
+                sumValue += dictionary[curr_symbol][i]
+                if ((sumValue > random_value)):
+                    curr_symbol = i
+                    break
+            sentence_length += 1
+        sentence += " </s>"
+        print(sentence)
+    #RETURN: this function is a void function, as such it returns nothing; it's purpose is to print generated sentences with the bigram langauge model.
 
-#     biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
-
-#     #"Removes" the biggest bigram from the data
-#     bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
-
-#     biggest_list.append(biggest_bigram)
-
-# print(biggest_list)
+#Only runs the code depending on what the user wants
+if(method=='MLE'):
+    print("Unigram MLE sentences")
+    generateUnigramSentences(mlebool=True,k=5)
+    print()
+    print("Bigram MLE sentences")
+    generateBigramSentences(mlebool=True,k=5,length=20)
+    print()
+elif(method=='Add-1'):
+    print("Bigram Add-1 sentences")
+    generateBigramSentences(mlebool=False,k=5,length=20)
+    print()
+    print("Unigram Add-1 sentences")
+    generateUnigramSentences(mlebool=False,k=4)
+    print()
 
 def findTopKBigrams(k,mlebool):
+    #ARGUMENTS: k:  the top k number of bigrams to find (k=10 as per the assignment's instructions).
+    #           mlebool:   this decides whether we use MLE or Add-1 smoothing.
+
     if(mlebool==True):
-        top_ten = [("",0)]*k
-        biggest_list = []
-        for x in range(0,k):
-            biggest_bigram = ("", 0)
-            for word in bigram_count:
-                for word2 in bigram_count:
-                    if bigram_count[word][word2] > biggest_bigram[1]:
-                        biggest_bigram = (word + " " + word2, bigram_count[word][word2])
+        dictionary = p_bigrams
+    else:
+        dictionary = add_one_prob
+    top_ten = [("",0)]*k
+    biggest_list = []
+    for x in range(0,k):
+        biggest_bigram = ("", 0)
+        for word in bigram_count:
+            for word2 in bigram_count:
+                if bigram_count[word][word2] > biggest_bigram[1]:
+                    biggest_bigram = (word + " " + word2, bigram_count[word][word2])
 
-            biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], p_bigrams[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+        biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], dictionary[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
+        bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
+        biggest_list.append(biggest_bigram)
 
-            #"Removes" the biggest bigram from the data
-            bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
-
-            biggest_list.append(biggest_bigram)
-    elif(mlebool==False):
-        top_ten = [("",0)]*k
-        biggest_list = []
-        for x in range(0,k):
-            biggest_bigram = ("", 0)
-            for word in bigram_count:
-                for word2 in bigram_count:
-                    if bigram_count[word][word2] > biggest_bigram[1]:
-                        biggest_bigram = (word + " " + word2, bigram_count[word][word2])
-
-            biggest_bigram = (biggest_bigram[0], bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]], add_one_prob[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]])
-
-            #"Removes" the biggest bigram from the data
-            bigram_count[biggest_bigram[0].split()[0]][biggest_bigram[0].split()[1]] = -1
-
-            biggest_list.append(biggest_bigram)
-
-    # print(biggest_list)
     for bigram in biggest_list:
         print(str(bigram[0].split()[0]) + " " + str(bigram[0].split()[1]) + " : " + str(bigram[1]) + " : " + str(bigram[2]))
+    #RETURN:    this function does not return anything, instead it prints the top k most likely bigrams onto the command line for the user.
 
 def findTopKUnigrams(k,mlebool):
+    #ARGUMENTS: k:  the number of unigrams to report, i.e. the k most likely unigrams.
+                #mlebool: wether to use MLE or, if false, Add-1 smoothing.
     if(mlebool==True):
         for x in range(0,k):
             most_popular = max(p_unigrams, key=p_unigrams.get)
@@ -438,43 +274,25 @@ def findTopKUnigrams(k,mlebool):
             most_popular = max(add_one_prob_uni, key=add_one_prob_uni.get)
             print(str(most_popular) + " : " + str(unigram_counts[most_popular]) + " : " + str(add_one_prob_uni[most_popular]))
             del add_one_prob_uni[most_popular]
+    #RETURN:    this function does not return anything, instead it prints the top k most likely bigrams onto the command line for the user.
+    #NOTE: this function deletes k most common unigrams from whichever dictionary (that is, MLE or Add-1) is chosen by mlebool.
 
-
-# print("Top 10 MLE Unigrams")
-# print("unigram : # of occurances : MLE probability")
-# findTopKUnigrams(k=10,mlebool=True)
-# print()
-print("Top 10 add-1 Unigrams")
-print("unigram : # of occurances : add-1 probability")
-findTopKUnigrams(k=10,mlebool=False)
-print()
-
-
-# print("Top 10 MLE Bigrams")
-# print("bigram : # of occurances : MLE probability")
-# findTopKBigrams(k=10,mlebool=True)
-# print()
-print("Top 10 add-1 Bigrams")
-print("bigram : # of occurances : add-1 probability")
-findTopKBigrams(k=10,mlebool=False)
-print()
-
-# for word in bigram_count:
-#     for word2 in bigram_count:
-#         #Goes thorugh every item in top ten list
-#         index = 0
-#         for list_word in top_ten:
-#             if list_word[0] == "" and list_word[1] == 0:
-#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
-#                 top_ten.pop()
-#                 break
-#             elif bigram_count[word][word2] > bigram_count[list_word[0].split()[0]][list_word[0].split()[1]]:
-#                 top_ten.insert(index, (word + " " + word2, p_bigrams[word][word2]))
-#                 top_ten.pop()
-#                 break
-#             index += 1
-
-# print(top_ten)
-# top_ten.insert(0, ("above the", 1.0))
-# print(top_ten[0][0].split()[0])
-# print(max(p_bigrams[curr_symbol],key=p_bigrams[curr_symbol].get))
+#Only runs the code depending on what the user wants
+if(method=="Add-1"):
+    print("Top 10 add-1 Unigrams")
+    print("unigram : # of occurances : add-1 probability")
+    findTopKUnigrams(k=10,mlebool=False)
+    print()
+    print("Top 10 add-1 Bigrams")
+    print("bigram : # of occurances : add-1 probability")
+    findTopKBigrams(k=10,mlebool=False)
+    print()
+elif(method=="MLE"):
+    print("Top 10 MLE Unigrams")
+    print("unigram : # of occurances : MLE probability")
+    findTopKUnigrams(k=10,mlebool=True)
+    print()
+    print("Top 10 MLE Bigrams")
+    print("bigram : # of occurances : MLE probability")
+    findTopKBigrams(k=10,mlebool=True)
+    print()
