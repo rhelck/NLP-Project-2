@@ -233,7 +233,7 @@ elif(method=='Add-1'):
     generateBigramSentences(mlebool=False,k=5,length=20)
     print()
     print("Unigram Add-1 sentences")
-    generateUnigramSentences(mlebool=False,k=4)
+    generateUnigramSentences(mlebool=False,k=5)
     print()
 
 def findTopKBigrams(k,mlebool):
