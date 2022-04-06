@@ -65,4 +65,6 @@ Outputs:
     5. Top 10 MLE Unigrams
     6. Top 10 MLE Bigrams
 -For sentence output, 5 sentences are given according to pdf instructions
+-As the purpose of this assignment is a learning experience, "<UNK>" was left in the generated sentence. In an actual appliation of this software, "<UNK>" would potentiall want to be removed
+-Addiionally "<s>" and "</s>" were used in the sentences. In an actual implementation, these may be removed.
 -For Top 10 outputs, format is "[uni/bi]gram : # of occurrences of [uni/bi]gram : [MLE/Add-1] probability"
