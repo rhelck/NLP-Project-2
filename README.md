@@ -53,10 +53,11 @@ bigrams for the respective models.
 Normalization:
 - All punctuation is removed and replaced with spaces.
 - All text is changed to lower case
-- Each "sentence" starts with "<s>" and ends with "</s>".
+- Each line of the raw .txt file starts with "<s>" and ends with "</s>".
+- We split the given corpus such that 75% of our data was used for training and the remaining 25% was held out for testing
 
 Outputs:
-- Sentences stop when the "</s>" or 20 characters are in the sentence
+- Sentences stop when the "</s>" or 20 tokens are in the sentence
 - For the chosen task, output includes:
     1. Unigram Perplexity
     2. Bigram Perplexity
