@@ -1,3 +1,0 @@
-- By 3/29: Code T1 and T2; meet right after class
-    -take input from .txt, count unqiue tokens
-- By 3/31: Code T3 and T4

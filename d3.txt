@@ -1,7 +1,7 @@
 What was easy about this assignment?
 
-Our group was able to come up with an efficient way to store the bigrams and unigrams quickly, 
-and we were able to implement ways to compute unsmoothed bigram probability estimates using MLE, 
+Our group was able to come up with an efficient way to store the bigrams and unigrams quickly. 
+We were able to implement ways to compute unsmoothed bigram probability estimates using MLE, 
 as well as probabilistically generate sentences.
 Translating the formulae in the textbook into code for the program was also easy, in addition to
 figuring out how to split the program into different functions.
@@ -11,31 +11,30 @@ What was challenging about this assignment?
 One thing that was challenging was figuring out if the results we got were reasonable, or if our program had a bug. 
 One example of this was with Add-1 smoothing. We had implemented the formula, but
 we were not getting the right numbers, and it took multiple revisions of
-the formula to get the right probabilities. A similar problem occurred with the perplexity of test sets of data.
+the code to get the right probabilities. A similar problem occurred with the perplexity of test sets of data.
 The program was outputting unusual perplexity results, and it took some time to figure out what we were doing wrong.
 
-What did you like about this assginment?
+What did you like about this assignment?
 
-We liked that the assignment was broken up into tasks that made the requirements clear. We also liked that the assignment 
-allowed us to see what operations like computing MLE, add-1 smoothing, and perplexity looked like on code. We were able to get an
+We liked that the assignment was broken up into tasks that made the requirements clear. We also liked that we were able
+to compare different sentences based on what corpus and language model was chosen. We were able to get an
 understanding of how bigrams and unigrams can be stored and used in code.
 
 What did you dislike about this assignment?
 
-We disliked the uncertainty over whether our computations were correct, as the results were alsways too small or too large.
-It took some time to figure out if our numbers were correct.
+We found that it was difficult to evaluate whether our models were done correctly since there was nothing against 
+which to benchmark our results. For example, we were unsure whether our perplexity scores were correct.
 
 How did your team function?
 
-Our team functioned well, and were able to get through tasks fairly quickly and meet the deadlines that we had kept for ourselves. 
-Discussions about the code were held through multiple Zoom and in person meetings. Robert and Michael were able to successfully 
-implement what was required for each of the tasks in code. Poean and Geethika were able to complete the documentation aspects of the project, 
+Our team functioned well and was able to get through tasks fairly efficiently and meet the deadlines that we had kept for ourselves. 
+Discussions about the code were held through multiple Zoom and in-person meetings. Robert and Michael were able to  
+implement what was listed for each of the tasks in the code. Poean and Geethika were able to complete the documentation aspects of the project, 
 such as the report and the README file. 
 
 What did you learn from this assignment?
 
 Geethika and PoeAn refamiliarized themselves with Python for this assignment. Additionally, we learned firsthand that 
 some testing and learning samples, like samples from Dr. Suess, are not good for language modeling 
-because they are very repetitive and will skew results. All in all, we were able to better understand how each of the topics discussed
-in class can be implemented in code.
-
+because they are very repetitive and will skew results. We also learned how to normalize a dataset, create a language model
+and generate sentences based on the learned data.
