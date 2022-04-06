@@ -1,13 +1,36 @@
+
 Our group ran our MLE bigram language model on two corpora: australia_rural.txt, which is a file containing transciptions of broadcasts from the Australian Broadcasting Corporation (ABC). As the name of the file
 implies, the subjects of these broadcasts tend to pertain to events occuring in sparcely populated parts of Australia, as well as pieces of news pertaining to farmers and agriculturalists. The second corpus upon which our MLE bigram model was run is austin.txt, which is a text file 
 containing the contents of the novel 'Sense and Sensibility' by Jane Austin. 
-In both cases, the corpus was divided into training and test corpora during pre-processing, where approximately 75 percent of the orginal corpus was using for training, and the remainder for testing.
+In both cases, the corpus was divided into training and test corpora during pre-processing, where approximately 75 percent of the orginal corpus was used for training, and the remainder for testing.
+
+australia_rural.txt analysis:
 When the MLE model was ran on australia_rural.txt, the most common bigrams included bigrams such as "he said", "says the", and "said </s>" (implying that the sentence ended with "said"). This is likely
 due to the fact that this corpus included secondhand sources and in-person interviews, where individuals or organizations may have been quoted or cited by reporters. Many of the other top-ten most likely 
 bigrams, such as "of the" and "in the" seem to derive from explanations of geogaphical localation, which would be expected from news reports.
-Among the ten most likely unigrams, these tended to be parts of English grammar ("and","the","of"), which 
+Among the ten most likely unigrams, these tended to be parts of English grammar ("and","the","of"), which
+When run with add-1, the top 10 unigrams and bigrams were very similar. 
+The overall probabiliities were a little but lower as compared to thir MLE due to the increase in other probabilities that were 0 in MLE.
+For the sentences, the MLE unigram sentences read like random words placed in a sentence. Additionally there are random <s> characters in the middle of the sentence.
+For add-1 unigram sentences, they still have random word placement, but due to the compensation of the word count, they contain words that are used less often.
+For MLE bigram sentences, the sentences are more coherent. Since bigram probabilites are used, <s> no longer appears in the middle of a sentence.
+Lastly for the add-1 bigram sentences, the sentences are long and complex. Their are a large number of different words. There are no <s> characters and no <UNK>.
+The unigram perplexity is around 520 while the bigram perplexity is around 720
 
-However, in austin.txt, different patterns were observed among the ten most likely bigrams and unigrams. 
+austin.txt analysis:
+The unigrams produced in austin.txt for both MLE and add-1 are very similar to those produced in australia_rural.txt. They are very common English words like "the" and "of".
+The bigrams are also very similar. Since this corpus is a story, it also has a lot of language like "he says" and "said the". This makes sense as australia_rural.txt is stories told by reporters, while this data is one cohesive story told by one author.
+The senetnces for this data set followed a similar pattern to the data in australia_rural.
+MLE unigram sentences contain random common words and have grammatical issues like <s> in the middle of the sentence
+Add-1 unigram sentences are similar to MLE unigram, but again have less common words due to the smoothing algorithm
+MLE bigram sentences become more coherent than either unigram model. <s> characters no longer appear in the middle of the sentence.
+Add-1 bigram sentces become long and complex using uncommon words.
+The unigram perplexity is around 509 while the bigram perplexity is around 720
+
+Perplexity Analysis
+The perplexity for these two corpora are very similar. There are several factors that can cause these similarities.
+First, both of these corpora have similar langauges. Both datasets have people saying "he said" or similar phrases because they both contain stories.
+Second, both corpora are around the same length. This then leads to a similar size of the train and test sets. This may cause similar numbers to be used in various calculations throughout the MLE, add-1 and perplexity calculations.
 
 Results:
 
@@ -99,6 +122,7 @@ With austin.txt as the corpus:
 
 Unigram Perplexity: 509.4434054978707
 Bigram Perplexity: 719.8117877022141
+
 unigram mle sentences
  <s> forestry introduced how europe <s> he <s> dairy there agriculture crop heading pastoralists <s> dr smut with around on </s>
  <s> government in mcbride australia in task weekend to gains company the possibility 14 lawyers territory conduct gold of lecturer </s>
